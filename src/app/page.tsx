@@ -18,7 +18,7 @@ export default function Home() {
       </div>
 
 
-      <div className="grid grid-cols-3 gap-3 w-full content-center">
+      <div className="grid grid-cols-3 gap-3">
         <ClickableCard
           title="Docs"
           href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
