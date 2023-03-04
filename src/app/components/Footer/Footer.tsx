@@ -22,7 +22,7 @@ const Footer = () => {
             </div>
 
             <div id='right'>
-                <h1 className='font-bold text-lg'>Book an appointment</h1>
+                <h1 className='font-bold text-lg'>Links</h1>
                 <br />
             </div>
         </div>
