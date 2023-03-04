@@ -50,10 +50,10 @@ class FilterSearch extends React.Component<FilterSearchProps, FilterSearchState>
         data.forEach((element: any) => {
             this.setState({ jobData: [...this.state.jobData, element] });
         });
+        this.findFilters();
     }
 
-    findFilter() {
-        //find filter from jobData and set it to state filter with active = false
+    findFilters() {
         let filter: filter = {
             keywords: [],
             country: [],
@@ -103,11 +103,64 @@ class FilterSearch extends React.Component<FilterSearchProps, FilterSearchState>
         return filteredData;
     }
 
+    activateFilter(filter: string, name: string) {
+        let newFilter: filter = this.state.filter;
+        switch (filter) {
+            case "keywords":
+                newFilter.keywords.forEach((keyword: any) => {
+                    if (keyword.name === name) {
+                        keyword.active = !keyword.active;
+                    }
+                });
+                break;
+            case "country":
+                newFilter.country.forEach((country: any) => {
+                    if (country.name === name) {
+                        country.active = !country.active;
+                    }
+                });
+                break;
+            case "jobTitle":
+                newFilter.jobTitle.forEach((jobTitle: any) => {
+                    if (jobTitle.name === name) {
+                        jobTitle.active = !jobTitle.active;
+                    }
+                });
+                break;
+            default:
+                break;
+        }
+        this.setState({ filter: newFilter });
+    }
+
     render() {
         //TODO: display Filters, add onClick to filter, display filtered data
-        return this.filterData().map((element: any) => {
-            return <div>{element.jobTitle}</div>
-        });
+        return(
+            <div>
+                {this.state.filter.keywords.map((keyword: any) => {
+                    return(
+                        <div onClick= { () => this.activateFilter("keywords", keyword.name) }>
+                            <p>{keyword.name}</p>
+                        </div>
+                    );
+                })};
+                {this.state.filter.country.map((country: any) => {
+                    return(
+                        <div onClick= { () => this.activateFilter("country", country.name) }>
+                            <p>{country.name}</p>
+                            </div>
+                    );
+                })};
+                {this.state.filter.jobTitle.map((jobTitle: any) => {
+                    return(
+                        <div onClick= { () => this.activateFilter("jobTitle", jobTitle.name) }>
+                            <p>{jobTitle.name}</p>
+                            </div>
+                    );
+                })};
+            </div>
+            
+        )
     };
 
 } export default FilterSearch;
