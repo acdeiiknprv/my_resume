@@ -12,11 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Menu />
-      <div className={styles.description}>
-        <TestChild />
-      </div>
-
+      <Menu activeLink=''/>
 
       <div className="grid grid-cols-3 gap-3">
         <ClickableCard
