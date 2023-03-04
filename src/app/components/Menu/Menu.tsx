@@ -9,7 +9,7 @@ interface MenuProps {
 
 const Menu = (props: MenuProps) => {
 
-    let activeLink = [
+    let links = [
         { name: "Passions", link: "/passions" },
         { name: "Work Experience", link: "/work-experience" },
         { name: "About", link: "/about" }
@@ -18,19 +18,22 @@ const Menu = (props: MenuProps) => {
     return (
         <div className='flex flex-row justify-between w-9/12'>
             <div id='left' className='basis-1/4'>
-                <Image
-                    src="/vercel.svg"
-                    alt="Vercel Logo"
-                    className={styles.vercelLogo}
-                    width={100}
-                    height={24}
-                    priority
-                />
+                {/*TODO: Make div size of image*/}
+                <Link href='/'>
+                    <Image
+                        src="/vercel.svg"
+                        alt="Vercel Logo"
+                        className={styles.vercelLogo}
+                        width={100}
+                        height={24}
+                        priority
+                    />
+                </Link>
             </div>
 
             <div id='right' className='basis-1/3'>
                 <div id='menu' className='flex flex-row justify-between'>
-                    {activeLink.map((element) => (
+                    {links.map((element) => (
                         <div className={element.link === props.activeLink ? 'activeLink' : ''}>
                             <Link href={element.link}><p>{element.name}</p></Link>
                         </div>
