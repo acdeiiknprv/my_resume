@@ -1,6 +1,14 @@
 import React from 'react';
+import Link from 'next/link'
 
 const Footer = () => {
+
+    let links = [
+        { name: "Passions", link: "/passions" },
+        { name: "Work Experience", link: "/work-experience" },
+        { name: "About", link: "/about" }
+    ];
+
     return (
         <div className='flex flex-row justify-between w-9/12'>
             <div id='left'>
@@ -14,6 +22,13 @@ const Footer = () => {
             <div id='left-middle'>
                 <h1 className='font-bold text-lg'>Menu</h1>
                 <br />
+                {
+                    links.map((element) => (
+                        <div className=''>
+                            <Link href={element.link}><p>{element.name}</p></Link>
+                        </div>
+                    ))
+                }
             </div>
 
             <div id='right-middle'>
