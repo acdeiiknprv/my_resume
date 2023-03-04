@@ -1,4 +1,5 @@
 import React from 'react';
+import DisplayJobs from '../DisplayJobs/DisplayJobs';
 
 interface FilterField {
     name: string;
@@ -135,31 +136,36 @@ class FilterSearch extends React.Component<FilterSearchProps, FilterSearchState>
 
     render() {
         //TODO: display Filters, add onClick to filter, display filtered data
-        return(
-            <div>
-                {this.state.filter.keywords.map((keyword: any) => {
-                    return(
-                        <div onClick= { () => this.activateFilter("keywords", keyword.name) }>
-                            <p>{keyword.name}</p>
-                        </div>
-                    );
-                })};
-                {this.state.filter.country.map((country: any) => {
-                    return(
-                        <div onClick= { () => this.activateFilter("country", country.name) }>
-                            <p>{country.name}</p>
+        return (
+            <div className="grid grid-cols-6 gap-4">
+                <div className="col-start-1 col-end-3">
+                    {this.state.filter.keywords.map((keyword: any) => {
+                        return (
+                            <div onClick={() => this.activateFilter("keywords", keyword.name)}>
+                                <p>{keyword.name}</p>
                             </div>
-                    );
-                })};
-                {this.state.filter.jobTitle.map((jobTitle: any) => {
-                    return(
-                        <div onClick= { () => this.activateFilter("jobTitle", jobTitle.name) }>
-                            <p>{jobTitle.name}</p>
+                        );
+                    })};
+                    {this.state.filter.country.map((country: any) => {
+                        return (
+                            <div onClick={() => this.activateFilter("country", country.name)}>
+                                <p>{country.name}</p>
                             </div>
-                    );
-                })};
+                        );
+                    })};
+                    {this.state.filter.jobTitle.map((jobTitle: any) => {
+                        return (
+                            <div onClick={() => this.activateFilter("jobTitle", jobTitle.name)}>
+                                <p>{jobTitle.name}</p>
+                            </div>
+                        );
+                    })};
+                </div>
+                <div className="col-start-3 col-span-4">
+                    <DisplayJobs filteredJobs={this.filterData()} />
+                </div>
             </div>
-            
+
         )
     };
 
