@@ -24,7 +24,7 @@ const Footer = () => {
                 <br />
                 {
                     links.map((element) => (
-                        <div className=''>
+                        <div key={element.name} className=''>
                             <Link href={element.link}><p>{element.name}</p></Link>
                         </div>
                     ))

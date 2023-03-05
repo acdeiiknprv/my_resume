@@ -34,7 +34,7 @@ const Menu = (props: MenuProps) => {
             <div id='right' className='basis-1/3'>
                 <div id='menu' className='flex flex-row justify-between'>
                     {links.map((element) => (
-                        <div className={element.link === props.activeLink ? 'activeLink' : ''}>
+                        <div key={element.name} className={element.link === props.activeLink ? 'activeLink' : ''}>
                             <Link href={element.link}><p>{element.name}</p></Link>
                         </div>
                     ))}
