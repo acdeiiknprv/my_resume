@@ -52,8 +52,7 @@ const DisplayJobs: React.FC<DisplayJobsProps> = (props) => {
                         </div>
                     </div>
                 )
-            })
-            }
+            })}
         </div>
     );
 };

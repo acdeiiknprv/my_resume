@@ -1,129 +1,122 @@
-'use client'
-import React from 'react';
-import DisplayJobs from '../DisplayJobs/DisplayJobs';
+import React, { useState } from "react";
 
 interface FilterField {
     name: string;
     active: boolean;
 }
 
-interface filter {
-    keywords: Array<FilterField>,
-    country: Array<FilterField>,
-    jobTitle: Array<FilterField>
-};
+interface Filter {
+    keywords: FilterField[];
+    country: FilterField[];
+    jobTitle: FilterField[];
+}
 
-interface jobsData {
-    jobTitle: string,
-    jobDescription: string,
-    jobCityLocation: string,
-    jobCountryLocation: string,
-    jobCompany: string,
-    jobStartDate: string,
-    jobEndDate: string,
-    jobKeywords: Array<string>,
-};
+interface JobsData {
+    jobTitle: string;
+    jobDescription: string;
+    jobCityLocation: string;
+    jobCountryLocation: string;
+    jobCompany: string;
+    jobStartDate: string;
+    jobEndDate: string;
+    jobKeywords: string[];
+}
 
-interface FilterSearchProps { };
+interface Props {
+    activatedFilters: Filter;
+    jobData: JobsData[];
+    onFilterValueChange: (filter: Filter) => void;
+}
 
-interface FilterSearchState {
-    filter: filter,
-    jobData: Array<jobsData>
-};
+const FilterSearch: React.FC<Props> = ({
+    activatedFilters,
+    jobData,
+    onFilterValueChange,
+}) => {
+    const [filters, setFilters] = useState<Filter>({
+        keywords: [],
+        country: [],
+        jobTitle: [],
+    });
 
-class FilterSearch extends React.Component<FilterSearchProps, FilterSearchState> {
-
-    constructor(props: FilterSearchProps) {
-        super(props);
-        this.state = {
-            filter: {
-                keywords: [],
-                country: [],
-                jobTitle: []
-            },
-            jobData: []
-        };
-    }
-
-    componentDidMount() {
-        //get Data from API
-        let data: Array<jobsData> = [];
-
-        data.forEach((element: any) => {
-            this.setState({ jobData: [...this.state.jobData, element] });
-        });
-        this.findFilters();
-    }
-
-    findFilters() {
-        let filter: filter = {
+    const findFiltersFromData = () => {
+        const newFilters: Filter = {
             keywords: [],
             country: [],
-            jobTitle: []
+            jobTitle: [],
         };
-        this.state.jobData.forEach((element: any) => {
-            element.jobKeywords.forEach((keyword: any) => {
-                if (!filter.keywords.includes(keyword)) {
-                    filter.keywords.push({ name: keyword, active: false });
+        jobData.forEach((element: JobsData) => {
+            element.jobKeywords.forEach((keyword: string) => {
+                if (!newFilters.keywords.some((existingKeyword) => existingKeyword.name === keyword)) {
+                    newFilters.keywords.push({
+                        name: keyword,
+                        active: false
+                    });
                 }
             });
-            if (!filter.country.includes(element.jobCountryLocation)) {
-                filter.country.push({ name: element.jobCountryLocation, active: false });
+            if (!newFilters.country.some((existingCountry) => existingCountry.name === element.jobCountryLocation)) {
+                newFilters.country.push({
+                    name: element.jobCountryLocation,
+                    active: false,
+                });
             }
-            if (!filter.jobTitle.includes(element.jobTitle)) {
-                filter.jobTitle.push({ name: element.jobTitle, active: false });
+            if (!newFilters.jobTitle.some((existingJobTitle) => existingJobTitle.name === element.jobTitle)) {
+                newFilters.jobTitle.push({
+                    name: element.jobTitle,
+                    active: false
+                });
             }
         });
-        this.setState({ filter: filter });
-    }
+        setFilters(getActivatedFilters(newFilters, activatedFilters));
+    };
 
-    filterData() {
-        let filteredData: Array<jobsData> = [];
-        this.state.jobData.forEach((element: any) => {
-            this.state.filter.keywords.forEach((keyword: any) => {
-                if (keyword.active && element.jobKeywords.includes(keyword.name)) {
-                    if (!filteredData.includes(element)) {
-                        filteredData.push(element);
-                    }
-                }
-            });
-            this.state.filter.country.forEach((country: any) => {
-                if (country.active && element.jobCountryLocation.includes(country.name)) {
-                    if (!filteredData.includes(element)) {
-                        filteredData.push(element);
-                    }
-                }
-            });
-            this.state.filter.jobTitle.forEach((jobTitle: any) => {
-                if (jobTitle.active && element.jobTitle.includes(jobTitle.name)) {
-                    if (!filteredData.includes(element)) {
-                        filteredData.push(element);
-                    }
-                }
-            });
-        });
-        return filteredData;
-    }
+    const getActivatedFilters = (newFilters: Filter, activatedFilters: Filter) => {
+        const updatedFilters: Filter = {
+            keywords: newFilters.keywords.map((filter) => ({
+                ...filter,
+                active: activatedFilters.keywords.some(
+                    (activatedFilter) => activatedFilter.name === filter.name
+                ),
+            })),
+            country: newFilters.country.map((filter) => ({
+                ...filter,
+                active: activatedFilters.country.some(
+                    (activatedFilter) => activatedFilter.name === filter.name
+                ),
+            })),
+            jobTitle: newFilters.jobTitle.map((filter) => ({
+                ...filter,
+                active: activatedFilters.jobTitle.some(
+                    (activatedFilter) => activatedFilter.name === filter.name
+                ),
+            })),
+        };
+        onFilterValueChange(updatedFilters);
+        return updatedFilters;
+    };
 
-    activateFilter(filter: string, name: string) {
-        let newFilter: filter = this.state.filter;
+    const activateFilter = (filter: string, name: string) => {
+        if (!filters) {
+            return;
+        }
+        let newFilter = { ...filters };
         switch (filter) {
             case "keywords":
-                newFilter.keywords.forEach((keyword: any) => {
+                newFilter.keywords.forEach((keyword: FilterField) => {
                     if (keyword.name === name) {
                         keyword.active = !keyword.active;
                     }
                 });
                 break;
             case "country":
-                newFilter.country.forEach((country: any) => {
+                newFilter.country.forEach((country: FilterField) => {
                     if (country.name === name) {
                         country.active = !country.active;
                     }
                 });
                 break;
             case "jobTitle":
-                newFilter.jobTitle.forEach((jobTitle: any) => {
+                newFilter.jobTitle.forEach((jobTitle: FilterField) => {
                     if (jobTitle.name === name) {
                         jobTitle.active = !jobTitle.active;
                     }
@@ -132,42 +125,34 @@ class FilterSearch extends React.Component<FilterSearchProps, FilterSearchState>
             default:
                 break;
         }
-        this.setState({ filter: newFilter });
+        setFilters(newFilter);
+        onFilterValueChange(newFilter);
     }
+    return (
+        <div>
+            {filters?.keywords.map((keyword: FilterField) => {
+                return (
+                    <div key={keyword.name} onClick={() => activateFilter("keywords", keyword.name)}>
+                        <p>{keyword.name}</p>
+                    </div>
+                );
+            })}
+            {filters?.country.map((country: FilterField) => {
+                return (
+                    <div key={country.name} onClick={() => activateFilter("country", country.name)}>
+                        <p>{country.name}</p>
+                    </div>
+                );
+            })}
+            {filters?.jobTitle.map((jobTitle: FilterField) => {
+                return (
+                    <div key={jobTitle.name} onClick={() => activateFilter("jobTitle", jobTitle.name)}>
+                        <p>{jobTitle.name}</p>
+                    </div>
+                );
+            })}
+        </div>
+    )
+};
 
-    render() {
-        //TODO: display Filters, add onClick to filter, display filtered data
-        return (
-            <div className="grid grid-cols-6 gap-4">
-                <div className="col-start-1 col-end-3">
-                    {this.state.filter.keywords.map((keyword: any) => {
-                        return (
-                            <div onClick={() => this.activateFilter("keywords", keyword.name)}>
-                                <p>{keyword.name}</p>
-                            </div>
-                        );
-                    })};
-                    {this.state.filter.country.map((country: any) => {
-                        return (
-                            <div onClick={() => this.activateFilter("country", country.name)}>
-                                <p>{country.name}</p>
-                            </div>
-                        );
-                    })};
-                    {this.state.filter.jobTitle.map((jobTitle: any) => {
-                        return (
-                            <div onClick={() => this.activateFilter("jobTitle", jobTitle.name)}>
-                                <p>{jobTitle.name}</p>
-                            </div>
-                        );
-                    })};
-                </div>
-                <div className="col-start-3 col-span-4">
-                    <DisplayJobs filteredJobs={this.filterData()} />
-                </div>
-            </div>
-
-        )
-    };
-
-} export default FilterSearch;
+export default FilterSearch;
