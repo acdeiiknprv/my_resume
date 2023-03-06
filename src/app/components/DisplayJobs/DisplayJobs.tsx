@@ -26,26 +26,12 @@ const DisplayJobs: React.FC<DisplayJobsProps> = (props) => {
                     <div key={index}>
                         <div className='' >
                             <h2 className={inter.className}>
-                                {job.jobTitle}
+                                {job.jobTitle} @ {job.jobCompany}
                             </h2>
-                            <p className={inter.className}>
-                                {job.jobDescription}
-                            </p>
-                            <p className={inter.className}>
-                                {job.jobCityLocation}
-                            </p>
-                            <p className={inter.className}>
-                                {job.jobCountryLocation}
-                            </p>
-                            <p className={inter.className}>
-                                {job.jobCompany}
-                            </p>
-                            <p className={inter.className}>
-                                {job.jobStartDate}
-                            </p>
-                            <p className={inter.className}>
-                                {job.jobEndDate}
-                            </p>
+                            <h3 className={inter.className}>
+                                {job.jobCityLocation}, {job.jobCountryLocation} - From {job.jobStartDate} to {job.jobEndDate}
+                            </h3>
+                            {job.jobDescription}
                             <p className={inter.className}>
                                 {job.jobKeywords}
                             </p>
