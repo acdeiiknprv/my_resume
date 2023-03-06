@@ -4,6 +4,8 @@ import React from 'react';
 import DisplayJobs from '../DisplayJobs/DisplayJobs';
 import FilterSearch from '../FilterSearch/FilterSearch';
 import logo from '@/app/ressources/logo.svg';
+import Image from 'next/image'
+import styles from './WorkExperience.module.css'
 
 interface FilterField {
     name: string;
@@ -119,7 +121,14 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
         return (
             <div>
                 {loading ? (
-                    <img src={logo} className="App-logo" alt="logo" />
+                    <Image
+                    src="/logo.svg"
+                    alt="React Logo Loader"
+                    className={styles.logo}
+                    width={100}
+                    height={24}
+                    priority
+                />
                 ) : (
                     <div className="flex flex-row">
                         <div className="basis-1/1">
