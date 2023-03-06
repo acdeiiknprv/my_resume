@@ -6,38 +6,8 @@ import FilterSearch from '../FilterSearch/FilterSearch';
 import logo from '@/app/ressources/logo.svg';
 import Image from 'next/image'
 import styles from './WorkExperience.module.css'
+import { FilterField, WorkExperienceProps, WorkExperienceState, JobsData, Filter} from '@/app/interfaces/interfaces';
 
-interface FilterField {
-    name: string;
-    active: boolean;
-}
-
-interface filter {
-    keywords: Array<FilterField>,
-    country: Array<FilterField>,
-    jobTitle: Array<FilterField>
-};
-
-interface jobsData {
-    jobTitle: string,
-    jobDescription: string,
-    jobCityLocation: string,
-    jobCountryLocation: string,
-    jobCompany: string,
-    jobStartDate: string,
-    jobEndDate: string,
-    jobKeywords: Array<string>,
-};
-
-interface WorkExperienceProps {
-    toActivate: filter
-};
-
-interface WorkExperienceState {
-    filter: filter,
-    jobData: Array<jobsData>,
-    loading: boolean
-};
 
 class WorkExperience extends React.Component<WorkExperienceProps, WorkExperienceState> {
 
@@ -68,9 +38,9 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
 
 
     filterData() {
-        let filteredData: Array<jobsData> = [];
+        let filteredData: Array<JobsData> = [];
         let userHasSelectedFilter = false;
-        this.state.jobData.forEach((element: jobsData) => {
+        this.state.jobData.forEach((element: JobsData) => {
             let shouldInclude = true;
 
             this.state.filter.keywords.forEach((keyword: FilterField) => {
@@ -112,7 +82,7 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
         }
     }
 
-    handleFilterValueChange = (filter: filter) => {
+    handleFilterValueChange = (filter: Filter) => {
         this.setState({ filter: filter });
     }
 

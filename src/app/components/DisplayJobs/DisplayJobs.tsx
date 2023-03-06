@@ -1,27 +1,13 @@
 import React from 'react';
 import { Inter } from 'next/font/google'
+import { DisplayJobsProps, JobsData } from '@/app/interfaces/interfaces';
 
 const inter = Inter({ subsets: ['latin'] })
-
-interface jobsData {
-    jobTitle: string,
-    jobDescription: string,
-    jobCityLocation: string,
-    jobCountryLocation: string,
-    jobCompany: string,
-    jobStartDate: string,
-    jobEndDate: string,
-    jobKeywords: Array<string>
-};
-
-interface DisplayJobsProps {
-    filteredJobs: Array<jobsData>
-}
 
 const DisplayJobs: React.FC<DisplayJobsProps> = (props) => {
     return (
         <div>
-            {props.filteredJobs.map((job: jobsData, index: number) => {
+            {props.filteredJobs.map((job: JobsData, index: number) => {
                 return (
                     <div key={index}>
                         <div className=''>

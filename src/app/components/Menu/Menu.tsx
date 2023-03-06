@@ -3,10 +3,7 @@ import Image from 'next/image'
 import styles from '../../page.module.css'
 import Link from 'next/link'
 import menuStyle from './Menu.module.css'
-
-interface MenuProps {
-    activeLink: string;
-}
+import { MenuProps } from '@/app/interfaces/interfaces';
 
 const Menu = (props: MenuProps) => {
 

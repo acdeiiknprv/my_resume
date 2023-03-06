@@ -1,35 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from './FilterSearch.module.css'
+import { FilterField, JobsData, Filter, FilterSearchProps} from '@/app/interfaces/interfaces';
 
-interface FilterField {
-    name: string;
-    active: boolean;
-}
-
-interface Filter {
-    keywords: FilterField[];
-    country: FilterField[];
-    jobTitle: FilterField[];
-}
-
-interface JobsData {
-    jobTitle: string;
-    jobDescription: string;
-    jobCityLocation: string;
-    jobCountryLocation: string;
-    jobCompany: string;
-    jobStartDate: string;
-    jobEndDate: string;
-    jobKeywords: Array<string>;
-}
-
-interface Props {
-    activatedFilters: Filter;
-    jobData: JobsData[];
-    onFilterValueChange: (filter: Filter) => void;
-}
-
-const FilterSearch: React.FC<Props> = ({
+const FilterSearch: React.FC<FilterSearchProps> = ({
     activatedFilters,
     jobData,
     onFilterValueChange,

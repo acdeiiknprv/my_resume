@@ -3,15 +3,9 @@ import Image from 'next/image'
 import styles from './ClickableCard.module.css'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
+import { ClickableCardProps } from '@/app/interfaces/interfaces';
 
 const inter = Inter({ subsets: ['latin'] })
-
-interface ClickableCardProps {
-    pathname: string;
-    query: string;
-    title: string;
-    description: string;
-}
 
 const ClickableCard: React.FC<ClickableCardProps> = (props) => {
     return (
