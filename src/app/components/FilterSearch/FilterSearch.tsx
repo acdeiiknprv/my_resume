@@ -75,6 +75,7 @@ const FilterSearch: React.FC<Props> = ({
     };
 
     const getActivatedFilters = (newFilters: Filter, activatedFilters: Filter) => {
+        console.log(newFilters)
         const updatedFilters: Filter = {
             keywords: newFilters.keywords.map((filter) => ({
                 ...filter,
@@ -95,8 +96,6 @@ const FilterSearch: React.FC<Props> = ({
                 ),
             })),
         };
-        console.log("Filters in FilterSearch:")
-        console.log(updatedFilters)
         onFilterValueChange(updatedFilters);
         return updatedFilters;
     };
@@ -131,6 +130,7 @@ const FilterSearch: React.FC<Props> = ({
             default:
                 break;
         }
+        console.log(newFilter)
         setFilters(newFilter);
         onFilterValueChange(newFilter);
     }
