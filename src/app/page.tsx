@@ -14,7 +14,7 @@ export default function Home() {
     <main className={styles.main}>
       <Menu activeLink='' />
 
-      <div className='flex flex-row justify-between'>
+      <div className='flex flex-row justify-between mb-16'>
         <div className="basis-3/5">
           <span className="text-3xl">Hi !</span>
           <br />

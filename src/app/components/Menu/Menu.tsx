@@ -14,7 +14,7 @@ const Menu = (props: MenuProps) => {
     ];
 
     return (
-        <div className='flex flex-row justify-between w-9/12'>
+        <div className='flex flex-row justify-between w-9/12 mb-16'>
             <div id='left' className='basis-1/4'>
                 {/*TODO: Make div size of image*/}
                 <Link href='/'>
