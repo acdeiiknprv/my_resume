@@ -65,22 +65,24 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
 
     filterData() {
         let filteredData: Array<jobsData> = [];
-        this.state.jobData.forEach((element: any) => {
-            this.state.filter.keywords.forEach((keyword: any) => {
+        this.state.jobData.forEach((element: jobsData) => {
+            this.state.filter.keywords.forEach((keyword: FilterField) => {
                 if (keyword.active && element.jobKeywords.includes(keyword.name)) {
                     if (!filteredData.includes(element)) {
                         filteredData.push(element);
                     }
                 }
             });
-            this.state.filter.country.forEach((country: any) => {
+            this.state.filter.country.forEach((country: FilterField) => {
+                console.log(country);
                 if (country.active && element.jobCountryLocation.includes(country.name)) {
+                    console.log(element)
                     if (!filteredData.includes(element)) {
                         filteredData.push(element);
                     }
                 }
             });
-            this.state.filter.jobTitle.forEach((jobTitle: any) => {
+            this.state.filter.jobTitle.forEach((jobTitle: FilterField) => {
                 if (jobTitle.active && element.jobTitle.includes(jobTitle.name)) {
                     if (!filteredData.includes(element)) {
                         filteredData.push(element);
