@@ -35,9 +35,11 @@ const DisplayJobs: React.FC<DisplayJobsProps> = (props) => {
                                     job.jobCityLocation + ', ' + job.jobCountryLocation + ' - From ' + job.jobStartDate + ' to ' + job.jobEndDate
                                 )}
                             </h3>
+                            <br />
                             <span className='text-base'>
                                 {job.jobDescription}
                             </span>
+                            <br />
                             <span className='text-sm'>Keywords: {job.jobKeywords.join(' ')}</span>
                         </div>
                         <hr />
