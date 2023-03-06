@@ -14,7 +14,7 @@ export default function Home() {
     <main className={styles.main}>
       <Menu activeLink='' />
 
-      <div className='flex flex-row justify-between mb-16'>
+      <div className='flex flex-row justify-between mb-32'>
         <div className="basis-3/5">
           <span className="text-3xl">Hi !</span>
           <br />
@@ -35,7 +35,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-3">
+      <div className={styles.grid}>
         <ClickableCard
           title="FullStack"
           query="full-stack"
