@@ -56,7 +56,6 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
         data.then((result: any) => {
             result.forEach((element: any) => {
                 this.setState({ jobData: [...this.state.jobData, element] });
-                console.log(this.state.jobData)
             });
         });
     }

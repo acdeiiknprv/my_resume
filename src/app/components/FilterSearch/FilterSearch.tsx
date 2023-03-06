@@ -33,7 +33,7 @@ const FilterSearch: React.FC<Props> = ({
     jobData,
     onFilterValueChange,
 }) => {
-    console.log(jobData)
+    console.log("Data in FilterSearch:" + jobData)
     const [filters, setFilters] = useState<Filter>({
         keywords: [],
         country: [],
