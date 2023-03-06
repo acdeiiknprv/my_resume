@@ -117,18 +117,21 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
     }
 
     render() {
-        const loading = true; // define loading variable here
         return (
             <div>
-                {loading ? (
-                    <Image
-                    src="/logo.svg"
-                    alt="React Logo Loader"
-                    className={styles.logo}
-                    width={100}
-                    height={24}
-                    priority
-                />
+                {this.state.loading ? (
+                    <div className={styles.container}>
+                        <div className={styles.loader}>
+                            <Image
+                                src="/logo.svg"
+                                alt="React Logo Loader"
+                                className={styles.logo}
+                                width={100}
+                                height={24}
+                                priority
+                            />
+                        </div>
+                    </div>
                 ) : (
                     <div className="flex flex-row">
                         <div className="basis-1/1">
