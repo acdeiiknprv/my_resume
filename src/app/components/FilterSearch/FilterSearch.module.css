@@ -1,9 +1,12 @@
 .activeBtn{
+    all: unset;
+    background-color: rgba(var(--callout-rgb),.5);
+    border: 1px solid rgba(var(--callout-border-rgb),.3);
     background-color: #3366ff;
     color: #000;
 }
 
-div {
+div .filter{
     all: unset;
     background-color: rgba(var(--callout-rgb),.5);
     border: 1px solid rgba(var(--callout-border-rgb),.3);

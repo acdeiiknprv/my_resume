@@ -145,7 +145,7 @@ const FilterSearch: React.FC<Props> = ({
             <h3>Technologies</h3>
             {filters?.keywords.map((keyword: FilterField) => {
                 return (
-                    <div className={keyword.active ? styles.activeBtn : ''} key={keyword.name} onClick={() => activateFilter("keywords", keyword.name)}>
+                    <div className={keyword.active ? styles.activeBtn : '.filter'} key={keyword.name} onClick={() => activateFilter("keywords", keyword.name)}>
                         <p>{keyword.name}</p>
                     </div>
                 );
@@ -154,7 +154,7 @@ const FilterSearch: React.FC<Props> = ({
             <h3>Country</h3>
             {filters?.country.map((country: FilterField) => {
                 return (
-                    <div className={country.active ? styles.activeBtn : ''} key={country.name} onClick={() => activateFilter("country", country.name)}>
+                    <div className={country.active ? styles.activeBtn : '.filter'} key={country.name} onClick={() => activateFilter("country", country.name)}>
                         <p>{country.name}</p>
                     </div>
                 );
@@ -163,7 +163,7 @@ const FilterSearch: React.FC<Props> = ({
             <h3>Job Title</h3>
             {filters?.jobTitle.map((jobTitle: FilterField) => {
                 return (
-                    <div className={jobTitle.active ? styles.activeBtn : ''} key={jobTitle.name} onClick={() => activateFilter("jobTitle", jobTitle.name)}>
+                    <div className={jobTitle.active ? styles.activeBtn : '.filter'} key={jobTitle.name} onClick={() => activateFilter("jobTitle", jobTitle.name)}>
                         <p>{jobTitle.name}</p>
                     </div>
                 );
