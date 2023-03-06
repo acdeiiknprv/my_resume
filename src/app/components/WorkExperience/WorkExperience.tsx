@@ -65,22 +65,32 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
 
     filterData() {
         let filteredData: Array<jobsData> = [];
+        let userHasSelectedFilter = false;
         this.state.jobData.forEach((element: jobsData) => {
             let shouldInclude = true;
 
             this.state.filter.keywords.forEach((keyword: FilterField) => {
+                if (keyword.active) {
+                    userHasSelectedFilter = true;
+                }
                 if (keyword.active && !element.jobKeywords.includes(keyword.name)) {
                     shouldInclude = false;
                 }
             });
 
             this.state.filter.country.forEach((country: FilterField) => {
+                if (country.active) {
+                    userHasSelectedFilter = true;
+                }
                 if (country.active && !element.jobCountryLocation.includes(country.name)) {
                     shouldInclude = false;
                 }
             });
 
             this.state.filter.jobTitle.forEach((jobTitle: FilterField) => {
+                if (jobTitle.active) {
+                    userHasSelectedFilter = true;
+                }
                 if (jobTitle.active && !element.jobTitle.includes(jobTitle.name)) {
                     shouldInclude = false;
                 }
@@ -90,8 +100,8 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
                 filteredData.push(element);
             }
         });
-        
-        if (filteredData.length === 0) {
+
+        if (userHasSelectedFilter) {
             return this.state.jobData;
         } else {
             return filteredData;
