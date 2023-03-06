@@ -112,11 +112,11 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
 
     render() {
         return (
-            <div className="grid grid-cols-6 gap-4">
-                <div className="col-start-1 col-end-3">
+            <div className="flex flex-row">
+                <div className="basis-1/1">
                     <FilterSearch activatedFilters={this.props.toActivate} jobData={this.state.jobData} onFilterValueChange={this.handleFilterValueChange} />
                 </div>
-                <div className="col-start-3 col-span-4">
+                <div className="basis-3/4">
                     <DisplayJobs filteredJobs={this.filterData()} />
                 </div>
             </div>
