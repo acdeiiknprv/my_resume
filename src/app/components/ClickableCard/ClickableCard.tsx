@@ -17,6 +17,14 @@ const ClickableCard: React.FC<ClickableCardProps> = (props) => {
                 }
             }}
             >
+                <Image
+                    src={props.picture}
+                    alt="Technology Picture"
+                    className=""
+                    width={225}
+                    height={155}
+                    priority
+                />
                 <h2 className={inter.className}>
                     {props.title} <span>-&gt;</span>
                 </h2>

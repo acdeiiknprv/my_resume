@@ -1,8 +1,11 @@
+import { ImageProps } from "next/image";
+
 export interface ClickableCardProps {
     pathname: string;
     query: string;
     title: string;
     description: string;
+    picture: string;
 };
 
 export interface DisplayJobsProps {

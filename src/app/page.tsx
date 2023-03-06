@@ -16,11 +16,11 @@ export default function Home() {
 
       <div className='flex flex-row justify-between'>
         <div className="basis-3/5">
-        <span className="text-3xl">Hi !</span>
-        <br />
-        <span className="text-4xl font-bold">I&apos;m Kevin Picard,</span>
-        <br />
-        <span className="text-4xl font-bold">a FullStack Developer</span>
+          <span className="text-3xl">Hi !</span>
+          <br />
+          <span className="text-4xl font-bold">I&apos;m Kevin Picard,</span>
+          <br />
+          <span className="text-4xl font-bold">a FullStack Developer</span>
         </div>
 
         <div className="basis-2/5">
@@ -40,21 +40,24 @@ export default function Home() {
           title="FullStack"
           query="full-stack"
           pathname="/work-experience"
-          description="Find in-depth information about Next.js features and API."
+          description="(JavaScript)"
+          picture="/fullstack.png"
         />
 
         <ClickableCard
           title="DevOps"
           query="dev-ops"
           pathname="/work-experience"
-          description="Explore the Next.js 13 playground."
+          description="(AWS, Docker, Kubernetes)"
+          picture="/devops.png"
         />
 
         <ClickableCard
           title="Mobile"
           query="mobile"
           pathname="/work-experience"
-          description="Instantly deploy your Next.js site to a shareable URL with Vercel."
+          description="(Kotlin, React Native)"
+          picture="/mobile.png"
         />
       </div>
       <Footer />
