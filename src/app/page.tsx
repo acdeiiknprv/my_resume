@@ -17,19 +17,19 @@ export default function Home() {
       <div className="grid grid-cols-3 gap-3">
         <ClickableCard
           title="FrontEnd"
-          href="/work-experience/front-end"
+          href="/work-experience?filter=front-end"
           description="Find in-depth information about Next.js features and API."
         />
 
         <ClickableCard
           title="BackEnd"
-          href="/work-experience/nack-end"
+          href="/work-experience?filter=back-end"
           description="Explore the Next.js 13 playground."
         />
 
         <ClickableCard
           title="Mobile"
-          href="/work-experience/mobile"
+          href="/work-experience?filter=mobile"
           description="Instantly deploy your Next.js site to a shareable URL with Vercel."
         />
       </div>

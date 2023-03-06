@@ -1,8 +1,7 @@
-import TestChild from '@/app/components/TestChild/TestChild';
+'use client'
 import Footer from '@/app/components/Footer/Footer';
 import Menu from '@/app/components/Menu/Menu';
 import styles from '@/app/page.module.css'
-import FilterSearch from '@/app/components/FilterSearch/FilterSearch';
 import WorkExperience from '@/app/components/WorkExperience/WorkExperience';
 import { useRouter } from 'next/router';
 
@@ -19,7 +18,7 @@ interface filter {
 
 export default function WorkExp() {
     const router = useRouter();
-    const { filter } = router.query;
+    const filter = router.query.filter;
 
     let filtersToActivate: filter = {
         keywords: [],
