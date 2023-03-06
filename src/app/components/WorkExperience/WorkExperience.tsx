@@ -50,9 +50,7 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
     }
 
     componentDidMount() {
-        //get Data from API
         const data = getJobsData()
-
 
         data.then((result: any) => {
             result.forEach((element: any) => {
