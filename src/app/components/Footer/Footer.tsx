@@ -39,6 +39,9 @@ const Footer = () => {
             <div id='right'>
                 <h1 className='font-bold text-lg'>Links</h1>
                 <br />
+                <a href="https://github.com/acdeiiknprv">Github</a>
+                <br />
+                <a href="https://www.linkedin.com/in/kevin-picard/">LinkedIn</a>
             </div>
         </div>
     );
