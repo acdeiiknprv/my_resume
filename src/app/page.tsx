@@ -25,7 +25,7 @@ export default function Home() {
 
         <div className="basis-2/5">
           <Image
-            src="/main.pmg"
+            src="/main.png"
             alt="Developer picture"
             className=""
             width={500}
