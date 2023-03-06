@@ -133,8 +133,8 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
                         </div>
                     </div>
                 ) : (
-                    <div className="flex flex-row">
-                        <div className="basis-1/1">
+                    <div className="flex flex-row justify-between">
+                        <div className="basis-1/4">
                             <FilterSearch activatedFilters={this.props.toActivate} jobData={this.state.jobData} onFilterValueChange={this.handleFilterValueChange} />
                         </div>
                         <div className="basis-3/4">
