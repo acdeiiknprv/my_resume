@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface FilterField {
     name: string;
@@ -19,7 +19,7 @@ interface JobsData {
     jobCompany: string;
     jobStartDate: string;
     jobEndDate: string;
-    jobKeywords: string[];
+    jobKeywords: Array<string>;
 }
 
 interface Props {
@@ -40,6 +40,11 @@ const FilterSearch: React.FC<Props> = ({
         country: [],
         jobTitle: [],
     });
+
+
+    useEffect(() => {
+        findFiltersFromData();
+    }, []);
 
     const findFiltersFromData = () => {
         const newFilters: Filter = {
