@@ -52,11 +52,13 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
     componentDidMount() {
         //get Data from API
         const data = getJobsData()
+        
 
         data.then((result: any) => {
-            console.log(result);
-            const jobKeywordsArray = result.jobKeywords.split(',');
-            this.setState({ jobData: { ...result, jobKeywords: jobKeywordsArray } });
+            result.forEach((element: any) => {
+                element.jobKeywords = element.jobKeywords.trim().split(',');
+            });
+            this.setState({ jobData: result });
           });
     }
 
