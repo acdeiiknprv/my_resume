@@ -4,6 +4,7 @@ import Menu from '@/app/components/Menu/Menu';
 import styles from '@/app/page.module.css'
 import WorkExperience from '@/app/components/WorkExperience/WorkExperience';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 interface FilterField {
     name: string;
@@ -17,32 +18,36 @@ interface filter {
 };
 
 export default function WorkExp() {
+
+
     const router = useRouter();
-    const filter = router.query.filter;
 
     let filtersToActivate: filter = {
         keywords: [],
         country: [],
         jobTitle: []
-      };
-
-    if (filter) {
-        switch (filter) {
-            case 'front-end':
-              filtersToActivate.jobTitle.push({ name: "FullStack Developer", active: true });
-              filtersToActivate.jobTitle.push({ name: "Web Developer", active: true });
-              break;
-            case 'back-end':
-              filtersToActivate.jobTitle.push({ name: "FullStack Developer", active: true });
-              filtersToActivate.jobTitle.push({ name: "DevOps Engineer", active: true });
-              break;
-            case 'mobile':
-              filtersToActivate.jobTitle.push({ name: "Android Developer", active: true });
-              break;
-            default:
-              break;
-          }
-    }
+    };
+    
+    useEffect(() => {
+        const filter = router.query.filter;
+        if (filter) {
+            switch (filter) {
+                case 'front-end':
+                    filtersToActivate.jobTitle.push({ name: "FullStack Developer", active: true });
+                    filtersToActivate.jobTitle.push({ name: "Web Developer", active: true });
+                    break;
+                case 'back-end':
+                    filtersToActivate.jobTitle.push({ name: "FullStack Developer", active: true });
+                    filtersToActivate.jobTitle.push({ name: "DevOps Engineer", active: true });
+                    break;
+                case 'mobile':
+                    filtersToActivate.jobTitle.push({ name: "Android Developer", active: true });
+                    break;
+                default:
+                    break;
+            }
+        }
+    }, []);
 
     return (
         <main className={styles.main}>
