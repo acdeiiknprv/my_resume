@@ -40,6 +40,7 @@ const DisplayJobs: React.FC<DisplayJobsProps> = (props) => {
                                 {job.jobDescription}
                             </span>
                             <br />
+                            <br />
                             <span className='text-sm'>Keywords: {job.jobKeywords.join(' ')}</span>
                         </div>
                         <hr />
