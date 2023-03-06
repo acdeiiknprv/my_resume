@@ -122,7 +122,6 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
                     <DisplayJobs filteredJobs={this.filterData()} />
                 </div>
             </div>
-
         )
     };
 
