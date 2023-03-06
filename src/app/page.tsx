@@ -12,30 +12,55 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Menu />
-      <div className={styles.description}>
-        <TestChild />
-      </div>
+      <Menu activeLink='' />
 
+      <div className='mb-32'>
+        <div className='flex flex-row justify-between mb-32'>
+          <div className="basis-3/5">
+            <span className="text-3xl">Hi !</span>
+            <br />
+            <span className="text-4xl font-bold">I&apos;m Kevin Picard,</span>
+            <br />
+            <span className="text-4xl font-bold">a FullStack Developer</span>
+          </div>
 
-      <div className="grid grid-cols-3 gap-3">
-        <ClickableCard
-          title="Docs"
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          description="Find in-depth information about Next.js features and API."
-        />
+          <div className="basis-2/5">
+            <Image
+              src="/main.png"
+              alt="Developer picture"
+              className=""
+              width={500}
+              height={465}
+              priority
+            />
+          </div>
+        </div>
 
-        <ClickableCard
-          title="Templates"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          description="Explore the Next.js 13 playground."
-        />
+        <div className={styles.grid}>
+          <ClickableCard
+            title="FullStack"
+            query="full-stack"
+            pathname="/work-experience"
+            description="(JavaScript)"
+            picture="/fullstack.png"
+          />
 
-        <ClickableCard
-          title="Deploy"
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          description="Instantly deploy your Next.js site to a shareable URL with Vercel."
-        />
+          <ClickableCard
+            title="DevOps"
+            query="dev-ops"
+            pathname="/work-experience"
+            description="(AWS, Docker, Kubernetes)"
+            picture="/devops.png"
+          />
+
+          <ClickableCard
+            title="Mobile"
+            query="mobile"
+            pathname="/work-experience"
+            description="(Kotlin, React Native)"
+            picture="/mobile.png"
+          />
+        </div>
       </div>
       <Footer />
     </main>
