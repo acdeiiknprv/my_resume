@@ -23,8 +23,8 @@ const DisplayJobs: React.FC<DisplayJobsProps> = (props) => {
         <div>
             {props.filteredJobs.map((job: jobsData, index: number) => {
                 return (
-                    <div key={index} className='flex flex-row justify-between w-9/12 text-center' >
-                        <div className='flex flex-col justify-between w-9/12 text-center' >
+                    <div key={index}>
+                        <div className='' >
                             <h2 className={inter.className}>
                                 {job.jobTitle}
                             </h2>
