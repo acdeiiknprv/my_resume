@@ -3,6 +3,7 @@ import { getJobsData } from '@/app/services/fetchJobData';
 import React from 'react';
 import DisplayJobs from '../DisplayJobs/DisplayJobs';
 import FilterSearch from '../FilterSearch/FilterSearch';
+import logo from '@/app/ressources/logo.svg';
 
 interface FilterField {
     name: string;
@@ -32,7 +33,8 @@ interface WorkExperienceProps {
 
 interface WorkExperienceState {
     filter: filter,
-    jobData: Array<jobsData>
+    jobData: Array<jobsData>,
+    loading: boolean
 };
 
 class WorkExperience extends React.Component<WorkExperienceProps, WorkExperienceState> {
@@ -45,7 +47,8 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
                 country: [],
                 jobTitle: []
             },
-            jobData: []
+            jobData: [],
+            loading: true
         };
     }
 
@@ -57,6 +60,7 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
                 element.jobKeywords = element.jobKeywords.trim().split(',');
             });
             this.setState({ jobData: result });
+            this.setState({ loading: false });
         });
     }
 
@@ -111,16 +115,22 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
     }
 
     render() {
+        const loading = true; // define loading variable here
         return (
-            <div className="flex flex-row">
-                <div className="basis-1/1">
-                    <FilterSearch activatedFilters={this.props.toActivate} jobData={this.state.jobData} onFilterValueChange={this.handleFilterValueChange} />
-                </div>
-                <div className="basis-3/4">
-                    <DisplayJobs filteredJobs={this.filterData()} />
-                </div>
+            <div>
+                {loading ? (
+                    <img src={logo} className="App-logo" alt="logo" />
+                ) : (
+                    <div className="flex flex-row">
+                        <div className="basis-1/1">
+                            <FilterSearch activatedFilters={this.props.toActivate} jobData={this.state.jobData} onFilterValueChange={this.handleFilterValueChange} />
+                        </div>
+                        <div className="basis-3/4">
+                            <DisplayJobs filteredJobs={this.filterData()} />
+                        </div>
+                    </div>
+                )}
             </div>
-        )
-    };
-
+        );
+    }
 } export default WorkExperience;
