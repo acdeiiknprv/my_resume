@@ -102,9 +102,9 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
         });
 
         if (userHasSelectedFilter) {
-            return this.state.jobData;
-        } else {
             return filteredData;
+        } else {
+            return this.state.jobData;
         }
     }
 
