@@ -12,7 +12,28 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Menu activeLink=''/>
+      <Menu activeLink='' />
+
+      <div className='flex flex-row justify-between'>
+        <div className="basis-3/5">
+        <span className="text-3xl">Hi !</span>
+        <br />
+        <span className="text-4xl font-bold">I'm Kevin Picard,</span>
+        <br />
+        <span className="text-4xl font-bold">a FullStack Developer</span>
+        </div>
+
+        <div className="basis-2/5">
+          <Image
+            src="/main.pmg"
+            alt="Developer picture"
+            className=""
+            width={500}
+            height={465}
+            priority
+          />
+        </div>
+      </div>
 
       <div className="grid grid-cols-3 gap-3">
         <ClickableCard
