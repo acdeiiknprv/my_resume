@@ -98,6 +98,8 @@ const FilterSearch: React.FC<Props> = ({
                 ),
             })),
         };
+        console.log("Filters in FilterSearch:")
+        console.log(updatedFilters)
         onFilterValueChange(updatedFilters);
         return updatedFilters;
     };
