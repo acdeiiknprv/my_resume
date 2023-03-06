@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styles from './FilterSearch.module.css'
-import { Navbar } from "flowbite-react";
 
 interface FilterField {
     name: string;
@@ -141,46 +140,34 @@ const FilterSearch: React.FC<Props> = ({
     }
     return (
         <div>
-            <Navbar
-                fluid={true}
-                rounded={true}
-            >
-                <Navbar.Brand href="https://flowbite.com/">
-                    <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-                        Filters
-                    </span>
-                </Navbar.Brand>
-                <Navbar.Toggle />
-                <Navbar.Collapse>
-                    {filters?.keywords.map((keyword: FilterField) => {
-                        return (
-                            <div className={keyword.active ? styles.activeBtn : '.filter'} key={keyword.name} onClick={() => activateFilter("keywords", keyword.name)}>
-                                {keyword.name}
-                            </div>
-                        );
-                    })}
-                </Navbar.Collapse>
-                <Navbar.Toggle />
-                <Navbar.Collapse>
-                    {filters?.country.map((country: FilterField) => {
-                        return (
-                            <div className={country.active ? styles.activeBtn : '.filter'} key={country.name} onClick={() => activateFilter("country", country.name)}>
-                                {country.name}
-                            </div>
-                        );
-                    })}
-                </Navbar.Collapse>
-                <Navbar.Toggle />
-                <Navbar.Collapse>
-                    {filters?.jobTitle.map((jobTitle: FilterField) => {
-                        return (
-                            <div className={jobTitle.active ? styles.activeBtn : '.filter'} key={jobTitle.name} onClick={() => activateFilter("jobTitle", jobTitle.name)}>
-                                {jobTitle.name}
-                            </div>
-                        );
-                    })}
-                </Navbar.Collapse>
-            </Navbar>
+            <h2>Filter</h2>
+            <hr />
+            <h3>Technologies</h3>
+            {filters?.keywords.map((keyword: FilterField) => {
+                return (
+                    <div className={keyword.active ? styles.activeBtn : '.filter'} key={keyword.name} onClick={() => activateFilter("keywords", keyword.name)}>
+                        <p>{keyword.name}</p>
+                    </div>
+                );
+            })}
+            <hr />
+            <h3>Country</h3>
+            {filters?.country.map((country: FilterField) => {
+                return (
+                    <div className={country.active ? styles.activeBtn : '.filter'} key={country.name} onClick={() => activateFilter("country", country.name)}>
+                        <p>{country.name}</p>
+                    </div>
+                );
+            })}
+            <hr />
+            <h3>Job Title</h3>
+            {filters?.jobTitle.map((jobTitle: FilterField) => {
+                return (
+                    <div className={jobTitle.active ? styles.activeBtn : '.filter'} key={jobTitle.name} onClick={() => activateFilter("jobTitle", jobTitle.name)}>
+                        <p>{jobTitle.name}</p>
+                    </div>
+                );
+            })}
         </div>
     )
 };
