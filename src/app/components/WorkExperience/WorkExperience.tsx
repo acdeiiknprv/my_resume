@@ -52,44 +52,45 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
     componentDidMount() {
         //get Data from API
         const data = getJobsData()
-        
+
 
         data.then((result: any) => {
             result.forEach((element: any) => {
                 element.jobKeywords = element.jobKeywords.trim().split(',');
             });
             this.setState({ jobData: result });
-          });
+        });
     }
 
 
     filterData() {
         let filteredData: Array<jobsData> = [];
         this.state.jobData.forEach((element: jobsData) => {
+            let shouldInclude = true;
+
             this.state.filter.keywords.forEach((keyword: FilterField) => {
-                if (keyword.active && element.jobKeywords.includes(keyword.name)) {
-                    if (!filteredData.includes(element)) {
-                        filteredData.push(element);
-                    }
+                if (keyword.active && !element.jobKeywords.includes(keyword.name)) {
+                    shouldInclude = false;
                 }
             });
+
             this.state.filter.country.forEach((country: FilterField) => {
-                console.log(country);
-                if (country.active && element.jobCountryLocation.includes(country.name)) {
-                    console.log(element)
-                    if (!filteredData.includes(element)) {
-                        filteredData.push(element);
-                    }
+                if (country.active && !element.jobCountryLocation.includes(country.name)) {
+                    shouldInclude = false;
                 }
             });
+
             this.state.filter.jobTitle.forEach((jobTitle: FilterField) => {
-                if (jobTitle.active && element.jobTitle.includes(jobTitle.name)) {
-                    if (!filteredData.includes(element)) {
-                        filteredData.push(element);
-                    }
+                if (jobTitle.active && !element.jobTitle.includes(jobTitle.name)) {
+                    shouldInclude = false;
                 }
             });
+
+            if (shouldInclude) {
+                filteredData.push(element);
+            }
         });
+        
         if (filteredData.length === 0) {
             return this.state.jobData;
         } else {
