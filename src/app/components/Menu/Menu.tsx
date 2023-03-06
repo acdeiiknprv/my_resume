@@ -8,9 +8,9 @@ import { MenuProps } from '@/app/interfaces/interfaces';
 const Menu = (props: MenuProps) => {
 
     let links = [
-        { name: "Passions", link: "/passions" },
+        { name: "Passions", link: "#" },
         { name: "Work Experience", link: "/work-experience" },
-        { name: "About", link: "/about" }
+        { name: "About", link: "#" }
     ];
 
     return (

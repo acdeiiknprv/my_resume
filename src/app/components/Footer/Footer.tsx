@@ -4,9 +4,9 @@ import Link from 'next/link'
 const Footer = () => {
 
     let links = [
-        { name: "Passions", link: "/passions" },
+        { name: "Passions", link: "#" },
         { name: "Work Experience", link: "/work-experience" },
-        { name: "About", link: "/about" }
+        { name: "About", link: "#" }
     ];
 
     return (
