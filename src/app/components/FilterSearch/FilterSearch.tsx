@@ -152,7 +152,7 @@ const FilterSearch: React.FC<Props> = ({
 
                                 {filters?.keywords.map((keyword: FilterField) => {
                                     return (
-                                        <li>
+                                        <li key={keyword.name}>
                                             <a onClick={() => activateFilter("keywords", keyword.name)} href="#" className="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">{keyword.name}</a>
                                         </li>
                                     );
@@ -169,7 +169,7 @@ const FilterSearch: React.FC<Props> = ({
 
                                 {filters?.country.map((country: FilterField) => {
                                     return (
-                                        <li>
+                                        <li key={country.name}>
                                             <a onClick={() => activateFilter("country", country.name)} href="#" className="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">{country.name}</a>
                                         </li>
                                     );
@@ -186,7 +186,7 @@ const FilterSearch: React.FC<Props> = ({
 
                                 {filters?.jobTitle.map((jobTitle: FilterField) => {
                                     return (
-                                        <li>
+                                        <li key={jobTitle.name}>
                                             <a onClick={() => activateFilter("jobTitle", jobTitle.name)} href="#" className="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">{jobTitle.name}</a>
                                         </li>
                                     );
