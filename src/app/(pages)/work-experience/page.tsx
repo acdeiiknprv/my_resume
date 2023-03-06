@@ -3,7 +3,7 @@ import Footer from '@/app/components/Footer/Footer';
 import Menu from '@/app/components/Menu/Menu';
 import styles from '@/app/page.module.css'
 import WorkExperience from '@/app/components/WorkExperience/WorkExperience';
-import { useRouter } from 'next/router';
+import { useSearchParams } from 'next/navigation'
 
 interface FilterField {
     name: string;
@@ -16,11 +16,10 @@ interface filter {
     jobTitle: Array<FilterField>
 };
 
-
 export default function WorkExp() {
 
-    const router = useRouter();
-    const filter = router.query.filter || '';
+    const searchParams = useSearchParams()
+    const filter = searchParams.get('filter')
 
     let filtersToActivate: filter = {
         keywords: [],

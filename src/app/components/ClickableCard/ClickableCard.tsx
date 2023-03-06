@@ -7,7 +7,8 @@ import Link from 'next/link'
 const inter = Inter({ subsets: ['latin'] })
 
 interface ClickableCardProps {
-    href: string;
+    pathname: string;
+    query: string;
     title: string;
     description: string;
 }
@@ -15,7 +16,13 @@ interface ClickableCardProps {
 const ClickableCard: React.FC<ClickableCardProps> = (props) => {
     return (
         <div className='flex flex-row justify-between w-9/12 text-center' >
-            <Link href={props.href}>
+            <Link href={{
+                pathname: props.pathname,
+                query: {
+                    filter: props.query
+                }
+            }}
+            >
                 <h2 className={inter.className}>
                     {props.title} <span>-&gt;</span>
                 </h2>
