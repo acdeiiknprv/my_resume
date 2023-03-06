@@ -96,6 +96,11 @@ const FilterSearch: React.FC<Props> = ({
                 ),
             })),
         };
+
+        updatedFilters.keywords.sort((a, b) => a.name.localeCompare(b.name));
+        updatedFilters.country.sort((a, b) => a.name.localeCompare(b.name));
+        updatedFilters.jobTitle.sort((a, b) => a.name.localeCompare(b.name));
+
         onFilterValueChange(updatedFilters);
         return updatedFilters;
     };
@@ -130,7 +135,6 @@ const FilterSearch: React.FC<Props> = ({
             default:
                 break;
         }
-        console.log(newFilter)
         setFilters(newFilter);
         onFilterValueChange(newFilter);
     }
@@ -138,21 +142,21 @@ const FilterSearch: React.FC<Props> = ({
         <div>
             {filters?.keywords.map((keyword: FilterField) => {
                 return (
-                    <div className={keyword.active? styles.activeBtn:''} key={keyword.name} onClick={() => activateFilter("keywords", keyword.name)}>
+                    <div className={keyword.active ? styles.activeBtn : ''} key={keyword.name} onClick={() => activateFilter("keywords", keyword.name)}>
                         <p>{keyword.name}</p>
                     </div>
                 );
             })}
             {filters?.country.map((country: FilterField) => {
                 return (
-                    <div className={country.active? styles.activeBtn:''} key={country.name} onClick={() => activateFilter("country", country.name)}>
+                    <div className={country.active ? styles.activeBtn : ''} key={country.name} onClick={() => activateFilter("country", country.name)}>
                         <p>{country.name}</p>
                     </div>
                 );
             })}
             {filters?.jobTitle.map((jobTitle: FilterField) => {
                 return (
-                    <div className={jobTitle.active? styles.activeBtn:''} key={jobTitle.name} onClick={() => activateFilter("jobTitle", jobTitle.name)}>
+                    <div className={jobTitle.active ? styles.activeBtn : ''} key={jobTitle.name} onClick={() => activateFilter("jobTitle", jobTitle.name)}>
                         <p>{jobTitle.name}</p>
                     </div>
                 );
