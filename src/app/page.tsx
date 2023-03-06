@@ -16,20 +16,20 @@ export default function Home() {
 
       <div className="grid grid-cols-3 gap-3">
         <ClickableCard
-          title="Docs"
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          title="FrontEnd"
+          href="/work-experience/front-end"
           description="Find in-depth information about Next.js features and API."
         />
 
         <ClickableCard
-          title="Templates"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          title="BackEnd"
+          href="/work-experience/nack-end"
           description="Explore the Next.js 13 playground."
         />
 
         <ClickableCard
-          title="Deploy"
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          title="Mobile"
+          href="/work-experience/mobile"
           description="Instantly deploy your Next.js site to a shareable URL with Vercel."
         />
       </div>
