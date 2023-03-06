@@ -113,31 +113,35 @@ const FilterSearch: React.FC<FilterSearchProps> = ({
     }
     return (
         <div>
-            <h2>Filter</h2>
-            <hr />
-            <h3>Technologies</h3>
+            <span className="text-lg font-bold">Filters</span>
+            <br />
+            <br />
+            <span className="text-base underline">Tech</span>
+            <br />
             {filters?.keywords.map((keyword: FilterField) => {
                 return (
                     <div className={keyword.active ? styles.activeBtn : ''} key={keyword.name} onClick={() => activateFilter("keywords", keyword.name)}>
-                        {keyword.name}
+                        <span className="text-sm font-bold">{keyword.name}</span>
                     </div>
                 );
             })}
             <hr />
-            <h3>Country</h3>
+            <span className="text-base underline">Country</span>
+            <br />
             {filters?.country.map((country: FilterField) => {
                 return (
                     <div className={country.active ? styles.activeBtn : ''} key={country.name} onClick={() => activateFilter("country", country.name)}>
-                        {country.name}
+                        <span className="text-sm font-bold">{country.name}</span>
                     </div>
                 );
             })}
             <hr />
-            <h3>Job Title</h3>
+            <span className="text-base underline">Job Title</span>
+            <br />
             {filters?.jobTitle.map((jobTitle: FilterField) => {
                 return (
                     <div className={jobTitle.active ? styles.activeBtn : ''} key={jobTitle.name} onClick={() => activateFilter("jobTitle", jobTitle.name)}>
-                        {jobTitle.name}
+                        <span className="text-sm font-bold">{jobTitle.name}</span>
                     </div>
                 );
             })}
