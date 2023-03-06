@@ -16,15 +16,15 @@ export default function Home() {
 
       <div className="grid grid-cols-3 gap-3">
         <ClickableCard
-          title="FrontEnd"
-          query="front-end"
+          title="FullStack"
+          query="full-stack"
           pathname="/work-experience"
           description="Find in-depth information about Next.js features and API."
         />
 
         <ClickableCard
-          title="BackEnd"
-          query="back-end"
+          title="DevOps"
+          query="dev-ops"
           pathname="/work-experience"
           description="Explore the Next.js 13 playground."
         />

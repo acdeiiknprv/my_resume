@@ -29,12 +29,10 @@ export default function WorkExp() {
 
     if (filter) {
         switch (filter) {
-            case 'front-end':
+            case 'full-stack':
                 filtersToActivate.jobTitle.push({ name: "FullStack Developer", active: true });
-                filtersToActivate.jobTitle.push({ name: "Web Developer", active: true });
                 break;
-            case 'back-end':
-                filtersToActivate.jobTitle.push({ name: "FullStack Developer", active: true });
+            case 'dev-ops':
                 filtersToActivate.jobTitle.push({ name: "DevOps Engineer", active: true });
                 break;
             case 'mobile':
