@@ -54,10 +54,9 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
         const data = getJobsData()
 
         data.then((result: any) => {
-            console.log("Data in WorkExperience:")
-            console.log(result)
-            this.setState({ jobData: result });
-        });
+            const jobKeywordsArray = result.jobKeywords.trim().split(',');
+            this.setState({ jobData: { ...result, jobKeywords: jobKeywordsArray } });
+          });
     }
 
 
@@ -86,7 +85,11 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
                 }
             });
         });
-        return filteredData;
+        if (filteredData.length === 0) {
+            return this.state.jobData;
+        } else {
+            return filteredData;
+        }
     }
 
     handleFilterValueChange = (filter: filter) => {
