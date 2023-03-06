@@ -61,8 +61,9 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
                 console.log("Data Element:")
                 console.log(element)
                 //dataArray.push(element.data);
+                this.setState({ jobData: [...this.state.jobData, element] });
+                console.log(this.state.jobData)
             });
-            //this.setState({ jobData: [...this.state.jobData, dataArray] });
         });
     }
 
