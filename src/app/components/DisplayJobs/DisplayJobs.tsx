@@ -11,7 +11,7 @@ interface jobsData {
     jobCompany: string,
     jobStartDate: string,
     jobEndDate: string,
-    jobKeywords: string,
+    jobKeywords: Array<string>
 };
 
 interface DisplayJobsProps {
@@ -38,7 +38,7 @@ const DisplayJobs: React.FC<DisplayJobsProps> = (props) => {
                             <span className='text-base'>
                                 {job.jobDescription}
                             </span>
-                            <span className='text-sm'>Keywords: {job.jobKeywords.split(',').join(' ')}</span>
+                            <span className='text-sm'>Keywords: {job.jobKeywords.join(' ')}</span>
                         </div>
                         <hr />
                     </div>

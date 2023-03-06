@@ -26,7 +26,7 @@ interface jobsData {
     jobCompany: string,
     jobStartDate: string,
     jobEndDate: string,
-    jobKeywords: string,
+    jobKeywords: Array<string>,
 };
 
 interface WorkExperienceProps {
