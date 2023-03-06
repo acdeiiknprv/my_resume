@@ -54,7 +54,8 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
         const data = getJobsData()
 
         data.then((result: any) => {
-            const jobKeywordsArray = result.jobKeywords.trim().split(',');
+            console.log(result);
+            const jobKeywordsArray = result.jobKeywords.split(',');
             this.setState({ jobData: { ...result, jobKeywords: jobKeywordsArray } });
           });
     }
