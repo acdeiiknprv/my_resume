@@ -26,7 +26,7 @@ const DisplayJobs: React.FC<DisplayJobsProps> = (props) => {
                     <div key={index}>
                         <div className='' >
                             <h2 className="text-xl">
-                                {job.jobTitle} @ <span className='underline '>{job.jobCompany}</span>
+                                {job.jobTitle} @ <span className='underline'>{job.jobCompany}</span>
                             </h2>
                             <h3 className="text-lg">
                                 {job.jobEndDate === "now" ? (
