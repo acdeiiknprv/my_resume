@@ -29,7 +29,11 @@ const DisplayJobs: React.FC<DisplayJobsProps> = (props) => {
                                 {job.jobTitle} @ {job.jobCompany}
                             </h2>
                             <h3 className={inter.className}>
-                                {job.jobCityLocation}, {job.jobCountryLocation} - From {job.jobStartDate} to {job.jobEndDate}
+                                {job.jobEndDate === "now" ? (
+                                    job.jobCityLocation + ', ' + job.jobCountryLocation + ' - Since ' + job.jobStartDate
+                                ) : (
+                                    job.jobCityLocation + ', ' + job.jobCountryLocation + ' - From ' + job.jobStartDate + ' to ' + job.jobEndDate
+                                )}
                             </h3>
                             {job.jobDescription}
                             <p className={inter.className}>
