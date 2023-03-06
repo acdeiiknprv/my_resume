@@ -76,7 +76,6 @@ const FilterSearch: React.FC<Props> = ({
     };
 
     const getActivatedFilters = (newFilters: Filter, activatedFilters: Filter) => {
-        console.log(newFilters)
         const updatedFilters: Filter = {
             keywords: newFilters.keywords.map((filter) => ({
                 ...filter,
