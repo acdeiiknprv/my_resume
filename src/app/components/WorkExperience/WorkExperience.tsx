@@ -95,7 +95,6 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
     }
 
     render() {
-        //TODO: display Filters, add onClick to filter, display filtered data
         return (
             <div className="grid grid-cols-6 gap-4">
                 <div className="col-start-1 col-end-3">
