@@ -45,9 +45,11 @@ export default function WorkExp() {
 
     return (
         <main className={styles.main}>
-            <Menu activeLink="/about" />
-            <div className={styles.description}>
-                <WorkExperience toActivate={filtersToActivate} />
+            <Menu activeLink="/work-experience" />
+            <div className="mb-32">
+                <div className={styles.description}>
+                    <WorkExperience toActivate={filtersToActivate} />
+                </div>
             </div>
             <Footer />
         </main>

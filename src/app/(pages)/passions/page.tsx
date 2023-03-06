@@ -6,7 +6,7 @@ import styles from '@/app/page.module.css'
 export default function Passions() {
     return (
         <main className={styles.main}>
-            <Menu activeLink="/about" />
+            <Menu activeLink="/" />
             <div className={styles.description}>
                 <TestChild />
             </div>
