@@ -17,6 +17,7 @@ const Footer = () => {
                 <p>Unit 14, 23-25 Campsie Street</p>
                 <p>Campsie, NSW 2194</p>
                 <p>Phone number: <a href="tel:+61475564651">0475 564 651</a></p>
+                <p>Email: <a href="mailto:kevin.picard.au@gmail.com">kevin.picard.au@gmail.com</a></p>
             </div>
 
             <div id='left-middle'>
