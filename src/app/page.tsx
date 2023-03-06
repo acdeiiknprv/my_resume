@@ -18,7 +18,7 @@ export default function Home() {
         <div className="basis-3/5">
         <span className="text-3xl">Hi !</span>
         <br />
-        <span className="text-4xl font-bold">I'm Kevin Picard,</span>
+        <span className="text-4xl font-bold">I&apos;m Kevin Picard,</span>
         <br />
         <span className="text-4xl font-bold">a FullStack Developer</span>
         </div>
