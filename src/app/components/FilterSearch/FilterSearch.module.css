@@ -2,6 +2,11 @@
     background-color: #3366ff;
     color: #000;
 }
+
 .activeBtn :hover{
+    cursor: pointer
+}
+
+.notActiveBtn :hover{
     cursor: pointer
 }

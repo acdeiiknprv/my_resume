@@ -120,27 +120,29 @@ const FilterSearch: React.FC<FilterSearchProps> = ({
             <br />
             {filters?.keywords.map((keyword: FilterField) => {
                 return (
-                    <div className={keyword.active ? styles.activeBtn : ''} key={keyword.name} onClick={() => activateFilter("keywords", keyword.name)}>
+                    <div className={keyword.active ? styles.activeBtn : styles.notActiveBtn} key={keyword.name} onClick={() => activateFilter("keywords", keyword.name)}>
                         <span className="text-sm font-bold">{keyword.name}</span>
                     </div>
                 );
             })}
-            <hr />
+            <br />
+            <br />
             <span className="text-base underline">Country</span>
             <br />
             {filters?.country.map((country: FilterField) => {
                 return (
-                    <div className={country.active ? styles.activeBtn : ''} key={country.name} onClick={() => activateFilter("country", country.name)}>
+                    <div className={country.active ? styles.activeBtn : styles.notActiveBtn} key={country.name} onClick={() => activateFilter("country", country.name)}>
                         <span className="text-sm font-bold">{country.name}</span>
                     </div>
                 );
             })}
-            <hr />
+            <br />
+            <br />
             <span className="text-base underline">Job Title</span>
             <br />
             {filters?.jobTitle.map((jobTitle: FilterField) => {
                 return (
-                    <div className={jobTitle.active ? styles.activeBtn : ''} key={jobTitle.name} onClick={() => activateFilter("jobTitle", jobTitle.name)}>
+                    <div className={jobTitle.active ? styles.activeBtn : styles.notActiveBtn} key={jobTitle.name} onClick={() => activateFilter("jobTitle", jobTitle.name)}>
                         <span className="text-sm font-bold">{jobTitle.name}</span>
                     </div>
                 );
