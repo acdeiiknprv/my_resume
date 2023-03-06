@@ -140,6 +140,9 @@ const FilterSearch: React.FC<Props> = ({
     }
     return (
         <div>
+            <h2>Filter</h2>
+            <hr />
+            <h3>Technologies</h3>
             {filters?.keywords.map((keyword: FilterField) => {
                 return (
                     <div className={keyword.active ? styles.activeBtn : ''} key={keyword.name} onClick={() => activateFilter("keywords", keyword.name)}>
@@ -147,6 +150,8 @@ const FilterSearch: React.FC<Props> = ({
                     </div>
                 );
             })}
+            <hr />
+            <h3>Country</h3>
             {filters?.country.map((country: FilterField) => {
                 return (
                     <div className={country.active ? styles.activeBtn : ''} key={country.name} onClick={() => activateFilter("country", country.name)}>
@@ -154,6 +159,8 @@ const FilterSearch: React.FC<Props> = ({
                     </div>
                 );
             })}
+            <hr />
+            <h3>Job Title</h3>
             {filters?.jobTitle.map((jobTitle: FilterField) => {
                 return (
                     <div className={jobTitle.active ? styles.activeBtn : ''} key={jobTitle.name} onClick={() => activateFilter("jobTitle", jobTitle.name)}>
