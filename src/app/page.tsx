@@ -25,14 +25,14 @@ export default function Home() {
         <ClickableCard
           title="BackEnd"
           query="back-end"
-          pathname="/work-experience?filter=back-end"
+          pathname="/work-experience"
           description="Explore the Next.js 13 playground."
         />
 
         <ClickableCard
           title="Mobile"
           query="mobile"
-          pathname="/work-experience?filter=mobile"
+          pathname="/work-experience"
           description="Instantly deploy your Next.js site to a shareable URL with Vercel."
         />
       </div>
