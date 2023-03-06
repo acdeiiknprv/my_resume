@@ -24,7 +24,8 @@ const DisplayJobs: React.FC<DisplayJobsProps> = (props) => {
             {props.filteredJobs.map((job: jobsData, index: number) => {
                 return (
                     <div key={index}>
-                        <div className='' >
+                        <div className=''>
+                            <br />
                             <h2 className="text-xl">
                                 {job.jobTitle} @ <span className='underline' >{job.jobCompany}</span>
                             </h2>
