@@ -4,9 +4,9 @@ import Link from 'next/link'
 const Footer = () => {
 
     let links = [
-        { name: "Passions", link: "#" },
+        { name: "About", link: "#" },
         { name: "Work Experience", link: "/work-experience" },
-        { name: "About", link: "#" }
+        { name: "Passions", link: "#" }
     ];
 
     return (
@@ -16,7 +16,7 @@ const Footer = () => {
                 <br />
                 <p>Unit 14, 23-25 Campsie Street</p>
                 <p>Campsie, NSW 2194</p>
-                <p>Phone number: <a href="tel:+61475564651">0475 564 651</a></p>
+                <p>PH: <a href="tel:+61475564651">0475 564 651</a></p>
                 <p>Email: <a href="mailto:kevin.picard.au@gmail.com">kevin.picard.au@gmail.com</a></p>
             </div>
 
@@ -35,6 +35,9 @@ const Footer = () => {
             <div id='right-middle'>
                 <h1 className='font-bold text-lg'>Quick Access</h1>
                 <br />
+                <a href="#">Technology used</a>
+                <br />
+                <a href="#">Visa status</a>
             </div>
 
             <div id='right'>
