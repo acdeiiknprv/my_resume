@@ -4,6 +4,7 @@ import styles from '../../page.module.css'
 import Link from 'next/link'
 import menuStyle from './Menu.module.css'
 import { MenuProps } from '@/app/interfaces/interfaces';
+import { Box } from '@mui/system';
 
 const Menu = (props: MenuProps) => {
 
@@ -28,6 +29,7 @@ const Menu = (props: MenuProps) => {
                     />
                 </Link>
             </div>
+            <Box> Test </Box>
 
             <div id='right' className='basis-1/3'>
                 <div id='menu' className='flex flex-row justify-between'>
@@ -41,5 +43,4 @@ const Menu = (props: MenuProps) => {
         </div>
     );
 };
-
-export default Menu;
+export default Menu

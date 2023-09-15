@@ -19,7 +19,7 @@ interface filter {
 export default function WorkExp() {
 
     const searchParams = useSearchParams()
-    const filter = searchParams.get('filter')
+    const filter = searchParams?.get('filter')
 
     let filtersToActivate: filter = {
         keywords: [],
