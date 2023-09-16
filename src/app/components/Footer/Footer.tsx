@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link'
+import { Box, Typography } from '@mui/material';
 
 const Footer = () => {
 
@@ -10,18 +11,21 @@ const Footer = () => {
     ];
 
     return (
-        <div className='flex flex-row justify-between w-9/12'>
-            <div id='left'>
-                <h1 className='font-bold text-lg'>Contact</h1>
+        <Box display={'flex'} width={'66%'} justifyContent={'space-between'} marginTop={'20vh'}>
+            <Box>
+                <Typography variant="h6" fontWeight={'700'} sx={{ flexGrow: 1 }}>
+                    Contact
+                </Typography>
                 <br />
-                <p>Unit 14, 23-25 Campsie Street</p>
                 <p>Campsie, NSW 2194</p>
                 <p>PH: <a href="tel:+61475564651">0475 564 651</a></p>
                 <p>Email: <a href="mailto:kevin.picard.au@gmail.com">kevin.picard.au@gmail.com</a></p>
-            </div>
+            </Box>
 
-            <div id='left-middle'>
-                <h1 className='font-bold text-lg'>Menu</h1>
+            <Box textAlign={'center'}>
+                <Typography variant="h6" fontWeight={'700'} sx={{ flexGrow: 1 }}>
+                    Menu
+                </Typography>
                 <br />
                 {
                     links.map((element) => (
@@ -30,24 +34,28 @@ const Footer = () => {
                         </div>
                     ))
                 }
-            </div>
+            </Box>
 
-            <div id='right-middle'>
-                <h1 className='font-bold text-lg'>Quick Access</h1>
+            <Box textAlign={'center'}>
+                <Typography variant="h6" fontWeight={'700'} sx={{ flexGrow: 1 }}>
+                    Quick Access
+                </Typography>
                 <br />
                 <a href="#">Technology used</a>
                 <br />
                 <a href="#">Visa status</a>
-            </div>
+            </Box>
 
-            <div id='right'>
-                <h1 className='font-bold text-lg'>Links</h1>
+            <Box textAlign={'right'}>
+                <Typography variant="h6" fontWeight={'700'} sx={{ flexGrow: 1 }}>
+                    Links
+                </Typography>
                 <br />
                 <a href="https://github.com/acdeiiknprv">Github</a>
                 <br />
                 <a href="https://www.linkedin.com/in/kevin-picard/">LinkedIn</a>
-            </div>
-        </div>
+            </Box>
+        </Box>
     );
 };
 
