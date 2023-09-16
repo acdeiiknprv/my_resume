@@ -35,8 +35,8 @@ const Menu = (props: MenuProps) => {
                         <Link href={element.link}><p>{element.name}</p></Link>
                     </div>
                 ))}
+                <ToggleThemeButton />
             </Box>
-            <ToggleThemeButton />
         </Box>
     );
 };
