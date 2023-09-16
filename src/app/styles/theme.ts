@@ -1,29 +1,37 @@
-// styles/theme.ts
-import { createTheme, Theme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 
-declare module '@mui/material/styles' {
-  interface Theme {
-    customPalette: {
-      customColor: string;
-    };
-  }
-  interface ThemeOptions {
-    customPalette?: {
-      customColor?: string;
-    };
-  }
-}
-
-const theme = createTheme({
+export const lightTheme = createTheme({
   palette: {
-    primary: {
-      main: '#1976d2',
+    mode: 'light',
+    primary: { main: '#3f51b5' }, 
+    secondary: { main: '#f50057' },
+    text: {
+      primary: 'rgba(0, 0, 0, 0.87)',
+      secondary: 'rgba(0, 0, 0, 0.54)',
     },
-    // ...
+    background: {
+      default: '#f5f5f5',
+      paper: '#fff',
+    },
+    // ... Add other colors and styles as needed
   },
-  customPalette: {
-    customColor: '#123456',
-  },
+  // Add other global styles or overrides here
 });
 
-export default theme;
+export const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: { main: '#9c27b0' },
+    secondary: { main: '#76ff03' },
+    text: {
+      primary: 'rgba(255, 255, 255, 0.87)',
+      secondary: 'rgba(255, 255, 255, 0.54)',
+    },
+    background: {
+      default: '#121212',
+      paper: '#424242',
+    },
+    // ... Add other colors and styles as needed
+  },
+  // Add other global styles or overrides here
+});
