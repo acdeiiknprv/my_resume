@@ -4,8 +4,11 @@ export interface ClickableCardProps {
     pathname: string;
     query: string;
     title: string;
-    description: string;
+    description?: string;
     picture: string;
+    width?: number;
+    height?: number;
+    hideInfo?: boolean;
 };
 
 export interface DisplayJobsProps {
