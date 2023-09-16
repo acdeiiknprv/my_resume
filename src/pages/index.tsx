@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from './page.module.css'
-import TestChild from "./components/TestChild/TestChild";
-import Footer from './components/Footer/Footer';
-import Menu from './components/Menu/Menu';
-import ClickableCard from './components/ClickableCard/ClickableCard';
+import styles from '../app/page.module.css'
+import TestChild from "../app/components/TestChild/TestChild";
+import Footer from '../app/components/Footer/Footer';
+import Menu from '../app/components/Menu/Menu';
+import ClickableCard from '../app/components/ClickableCard/ClickableCard';
 import { Box, Typography } from '@mui/material';
 
 
