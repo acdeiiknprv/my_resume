@@ -13,11 +13,11 @@ const Menu = (props: MenuProps) => {
         { name: "Work Experience", link: "/work-experience" },
         { name: "Passions", link: "#" }
     ];
+    console.log(props);
 
     return (
-        <div className='flex flex-row justify-between w-9/12 mb-16'>
-            <div id='left' className='basis-1/4'>
-                {/*TODO: Make div size of image*/}
+        <Box display={'flex'} width={'66%'} justifyContent={'space-between'} marginBottom={'7vh'}>
+            <Box>
                 <Link href='/'>
                     <Image
                         src="/vercel.svg"
@@ -28,19 +28,15 @@ const Menu = (props: MenuProps) => {
                         priority
                     />
                 </Link>
-            </div>
-            <Box> Test </Box>
-
-            <div id='right' className='basis-1/3'>
-                <div id='menu' className='flex flex-row justify-between'>
-                    {links.map((element) => (
-                        <div key={element.name} className={element.link === props.activeLink ? 'activeLink' : ''}>
-                            <Link href={element.link}><p>{element.name}</p></Link>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </div>
+            </Box>
+            <Box display={'flex'} gap={'3vw'} >
+                {links.map((element) => (
+                    <div key={element.name} className={element.link === props.activeLink ? 'activeLink' : ''}>
+                        <Link href={element.link}><p>{element.name}</p></Link>
+                    </div>
+                ))}
+            </Box>
+        </Box>
     );
 };
 export default Menu
