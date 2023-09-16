@@ -2,9 +2,9 @@ import React from 'react';
 import Image from 'next/image'
 import styles from '../../page.module.css'
 import Link from 'next/link'
-import menuStyle from './Menu.module.css'
 import { MenuProps } from '@/app/interfaces/interfaces';
 import { Box } from '@mui/system';
+import ToggleThemeButton from '../ToggleTheme/ToggleThemeButton';
 
 const Menu = (props: MenuProps) => {
 
@@ -36,6 +36,7 @@ const Menu = (props: MenuProps) => {
                     </div>
                 ))}
             </Box>
+            <ToggleThemeButton />
         </Box>
     );
 };
