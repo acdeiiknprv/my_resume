@@ -7,6 +7,7 @@ import logo from '@/app/ressources/logo.svg';
 import Image from 'next/image'
 import styles from './WorkExperience.module.css'
 import { FilterField, WorkExperienceProps, WorkExperienceState, JobsData, Filter} from '@/app/interfaces/interfaces';
+import { Box } from '@mui/material';
 
 
 class WorkExperience extends React.Component<WorkExperienceProps, WorkExperienceState> {
@@ -103,14 +104,14 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
                         </div>
                     </div>
                 ) : (
-                    <div className="flex flex-row justify-between">
-                        <div className="basis-1/4">
+                    <Box display="flex">
+                        <Box flexBasis="25%" flexGrow={0} flexShrink={0}>
                             <FilterSearch activatedFilters={this.props.toActivate} jobData={this.state.jobData} onFilterValueChange={this.handleFilterValueChange} />
-                        </div>
-                        <div className="basis-3/4">
+                        </Box>
+                        <Box flexBasis="75%" flexGrow={0} flexShrink={0}>
                             <DisplayJobs filteredJobs={this.filterData()} />
-                        </div>
-                    </div>
+                        </Box>
+                    </Box>
                 )}
             </div>
         );
