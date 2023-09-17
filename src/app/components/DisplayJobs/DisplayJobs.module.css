@@ -1,0 +1,23 @@
+.fullstackDark {
+  border-color: #99bdff;
+}
+
+.fullstackLight {
+    border-color: #26217c;
+}
+
+.mobileDark {
+    border-color: #d8f39a;
+}
+
+.mobileLight {
+    border-color: #796406;
+}
+
+.devopsDark {
+    border-color: #fd8787;
+}
+
+.devopsLight {
+    border-color: #641515;
+}
