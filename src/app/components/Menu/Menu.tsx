@@ -16,7 +16,6 @@ const Menu = (props: MenuProps) => {
     let links = [
         { name: "About", link: "#" },
         { name: "Work Experience", link: "/work-experience" },
-        { name: "Passions", link: "#" }
     ];
 
     const getActiveLinkClass = (link: string) => {

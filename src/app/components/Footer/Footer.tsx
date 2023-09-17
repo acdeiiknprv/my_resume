@@ -7,7 +7,6 @@ const Footer = () => {
     let links = [
         { name: "About", link: "#" },
         { name: "Work Experience", link: "/work-experience" },
-        { name: "Passions", link: "#" }
     ];
 
     return (
@@ -54,6 +53,8 @@ const Footer = () => {
                 <a href="https://github.com/acdeiiknprv">Github</a>
                 <br />
                 <a href="https://www.linkedin.com/in/kevin-picard/">LinkedIn</a>
+                <br />
+                <a href="">Download my Resume</a>
             </Box>
         </Box>
     );
