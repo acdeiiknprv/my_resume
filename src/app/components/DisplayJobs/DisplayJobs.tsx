@@ -31,10 +31,12 @@ const DisplayJobs: React.FC<DisplayJobsProps> = (props) => {
         }
     }
 
+    const { filteredJobs } = props;
+
     return (
-        <div>
-            {props.filteredJobs.map((job: JobsData, index: number) => {
-                return (
+        <Box>
+            {filteredJobs.length > 0 
+                ? filteredJobs.map((job: JobsData, index: number) => (
                     <Box key={index} margin={'2vh'}>
                         <Box border={'2px solid'} className={findBorderColorByJobTitleAndTheme(job.jobTitle)} borderRadius={'8px'} padding={'3vh'}>
                             <Typography variant='h5' fontWeight={'700'}>
@@ -53,10 +55,19 @@ const DisplayJobs: React.FC<DisplayJobsProps> = (props) => {
                             <span className='text-sm'>Keywords: {job.jobKeywords.join(' ')}</span>
                         </Box>
                     </Box>
+                ))
+                : 
+                (
+                    <Box>
+                        <Typography variant='h5' fontWeight={'700'}>
+                            No jobs found
+                        </Typography>
+                    </Box>
                 )
-            })}
-        </div>
+            }
+        </Box>
     );
+
 };
 
 export default DisplayJobs;

@@ -3,7 +3,6 @@ import { getJobsData } from '@/app/services/fetchJobData';
 import React from 'react';
 import DisplayJobs from '../DisplayJobs/DisplayJobs';
 import FilterSearch from '../FilterSearch/FilterSearch';
-import logo from '@/app/ressources/logo.svg';
 import Image from 'next/image'
 import styles from './WorkExperience.module.css'
 import { FilterField, WorkExperienceProps, WorkExperienceState, JobsData, Filter} from '@/app/interfaces/interfaces';
@@ -89,10 +88,13 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
 
     render() {
         return (
-            <div>
+            <Box width='100%'>
                 {this.state.loading ? (
-                    <div className={styles.container}>
-                        <div className={styles.loader}>
+                    <Box display="flex">
+                        <Box flexBasis="25%" flexGrow={0} flexShrink={0}>
+                            <span>Filters</span>
+                        </Box>
+                        <Box display="flex" flexBasis="75%" flexGrow={0} flexShrink={0} justifyContent="center">
                             <Image
                                 src="/logo.svg"
                                 alt="React Logo Loader"
@@ -101,8 +103,8 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
                                 height={24}
                                 priority
                             />
-                        </div>
-                    </div>
+                        </Box>
+                    </Box>
                 ) : (
                     <Box display="flex">
                         <Box flexBasis="25%" flexGrow={0} flexShrink={0}>
@@ -113,7 +115,7 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
                         </Box>
                     </Box>
                 )}
-            </div>
+            </Box>
         );
     }
 } export default WorkExperience;
