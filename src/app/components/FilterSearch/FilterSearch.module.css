@@ -10,3 +10,12 @@
 .notActiveBtn :hover{
     cursor: pointer
 }
+
+.counter {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: 50%;
+    padding: 0.2em 0.5em;
+    margin-left: 0.5em;
+    font-weight: bold;
+  }

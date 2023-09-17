@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from './FilterSearch.module.css'
-import { FilterField, JobsData, Filter, FilterSearchProps} from '@/app/interfaces/interfaces';
+import { FilterField, JobsData, Filter, FilterSearchProps } from '@/app/interfaces/interfaces';
+import { Box, Button, Collapse, List, ListItem, Typography } from "@mui/material";
+import { MenuType } from "@/app/interfaces/interfaces";
 
 const FilterSearch: React.FC<FilterSearchProps> = ({
     activatedFilters,
@@ -12,6 +14,19 @@ const FilterSearch: React.FC<FilterSearchProps> = ({
         country: [],
         jobTitle: [],
     });
+
+    const [menus, setMenus] = useState({
+        tech: true,
+        country: false,
+        jobTitle: false,
+    });
+
+    const toggleMenu = (menuName: MenuType) => {
+        setMenus(prevMenus => ({
+            ...prevMenus,
+            [menuName]: !prevMenus[menuName]
+        }));
+    };
 
     useEffect(() => {
         findFiltersFromData();
@@ -111,43 +126,64 @@ const FilterSearch: React.FC<FilterSearchProps> = ({
         setFilters(newFilter);
         onFilterValueChange(newFilter);
     }
+
     return (
-        <div>
+        <Box>
             <span className="text-lg font-bold">Filters</span>
             <br />
             <br />
-            <span className="text-base underline">Tech</span>
-            <br />
-            {filters?.keywords.map((keyword: FilterField) => {
-                return (
-                    <div className={keyword.active ? styles.activeBtn : styles.notActiveBtn} key={keyword.name} onClick={() => activateFilter("keywords", keyword.name)}>
-                        <span className="text-sm font-bold">{keyword.name}</span>
-                    </div>
-                );
-            })}
-            <br />
-            <br />
-            <span className="text-base underline">Country</span>
-            <br />
-            {filters?.country.map((country: FilterField) => {
-                return (
-                    <div className={country.active ? styles.activeBtn : styles.notActiveBtn} key={country.name} onClick={() => activateFilter("country", country.name)}>
-                        <span className="text-sm font-bold">{country.name}</span>
-                    </div>
-                );
-            })}
-            <br />
-            <br />
-            <span className="text-base underline">Job Title</span>
-            <br />
-            {filters?.jobTitle.map((jobTitle: FilterField) => {
-                return (
-                    <div className={jobTitle.active ? styles.activeBtn : styles.notActiveBtn} key={jobTitle.name} onClick={() => activateFilter("jobTitle", jobTitle.name)}>
-                        <span className="text-sm font-bold">{jobTitle.name}</span>
-                    </div>
-                );
-            })}
-        </div>
+            <Button onClick={() => toggleMenu('tech')}>
+                Tech
+                {filters?.keywords.filter(keyword => keyword.active).length > 0 &&
+                    <span className={styles.counter}>
+                        +{filters?.keywords.filter(keyword => keyword.active).length}
+                    </span>
+                }
+            </Button>
+            <Collapse in={menus.tech}>
+                <List>
+                    {filters?.keywords.map((keyword: FilterField) =>
+                        <div className={keyword.active ? styles.activeBtn : styles.notActiveBtn} key={keyword.name} onClick={() => activateFilter("keywords", keyword.name)}>
+                            <span className="text-sm font-bold">{keyword.name}</span>
+                        </div>
+                    )}
+                </List>
+            </Collapse>
+            <Button onClick={() => toggleMenu('country')}>
+                Country
+                {filters?.country.filter(country => country.active).length > 0 &&
+                    <span className={styles.counter}>
+                        +{filters?.country.filter(country => country.active).length}
+                    </span>
+                }
+            </Button>
+            <Collapse in={menus.country}>
+                <List>
+                    {filters?.country.map((country: FilterField) =>
+                        <div className={country.active ? styles.activeBtn : styles.notActiveBtn} key={country.name} onClick={() => activateFilter("country", country.name)}>
+                            <span className="text-sm font-bold">{country.name}</span>
+                        </div>
+                    )}
+                </List>
+            </Collapse>
+            <Button onClick={() => toggleMenu('jobTitle')}>
+                Job Title
+                {filters?.jobTitle.filter(jobTitle => jobTitle.active).length > 0 &&
+                    <span className={styles.counter}>
+                        +{filters?.jobTitle.filter(jobTitle => jobTitle.active).length}
+                    </span>
+                }
+            </Button>
+            <Collapse in={menus.jobTitle}>
+                <List>
+                    {filters?.jobTitle.map((jobTitle: FilterField) =>
+                        <div className={jobTitle.active ? styles.activeBtn : styles.notActiveBtn} key={jobTitle.name} onClick={() => activateFilter("jobTitle", jobTitle.name)}>
+                            <span className="text-sm font-bold">{jobTitle.name}</span>
+                        </div>
+                    )}
+                </List>
+            </Collapse>
+        </Box>
     )
 };
 

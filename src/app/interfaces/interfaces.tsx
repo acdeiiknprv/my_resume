@@ -57,3 +57,4 @@ export interface WorkExperienceState {
     loading: boolean
 };
 
+export type MenuType = "tech" | "country" | "jobTitle";
