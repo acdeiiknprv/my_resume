@@ -11,7 +11,6 @@ const Menu = (props: MenuProps) => {
 
     const { theme } = useThemeContext();
     const logoClass = theme.palette.mode === 'dark' ? styles.darkLogo : styles.lightLogo;
-    console.log(logoClass);
 
     let links = [
         { name: "About", link: "#" },
