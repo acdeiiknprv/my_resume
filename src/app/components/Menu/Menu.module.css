@@ -1,3 +1,18 @@
 .menu {
     margin-bottom: 5%;
 }
+
+.darkLogo {
+    /* To change */
+    fill: aqua;
+}
+
+.lightLogo {
+    /* To change */
+    fill: red;
+}
+
+.activeLink {
+    /* To change */
+    color: red;
+}

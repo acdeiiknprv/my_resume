@@ -15,6 +15,21 @@ export const lightTheme = createTheme({
     },
     // ... Add other colors and styles as needed
   },
+  components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          textDecoration: 'none',
+          '&:hover': {
+            textDecoration: 'none',
+          },
+          '&:visited, &:link, &:active': {
+            color: 'inherit', 
+          }
+        }
+      }
+    }
+  },
   // Add other global styles or overrides here
 });
 
@@ -32,6 +47,21 @@ export const darkTheme = createTheme({
       paper: '#424242',
     },
     // ... Add other colors and styles as needed
+  },
+  components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          textDecoration: 'none',
+          '&:hover': {
+            textDecoration: 'none',
+          },
+          '&:visited, &:link, &:active': {
+            color: 'inherit', 
+          }
+        }
+      }
+    }
   },
   // Add other global styles or overrides here
 });
