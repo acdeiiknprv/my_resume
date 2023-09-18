@@ -47,37 +47,139 @@ export default function Home() {
           </Typography>
         </Box>
 
-        <Box> {/* To move to about + replace by Technology used */}
+        <Box>
           <Box textAlign={'center'} marginBottom={'5vh'}>
             <Typography variant={'h4'} fontWeight={'700'}>
-              ~ My Tech Stack ~
+              My Tech Stack
             </Typography>
           </Box>
-          <Box display={'flex'} justifyContent={'space-around'}>
-            
-            <ClickableCard
-                title="DevOps"
-                query="dev-ops"
-                pathname="/work-experience"
-                picture="/devops.png"
-              />
-              
+          <Box display='flex' flexDirection='column' gap='7vh'>
+            <Box display={'flex'} justifyContent={'space-around'}>
               <ClickableCard
-                title="FullStack"
-                query="full-stack"
-                pathname="/work-experience"
-                picture="/fullstack.png"
-              />
+                  title="DevOps"
+                  query="dev-ops"
+                  pathname="/work-experience"
+                  picture="/tech/react.svg"
+                  width={100}
+                  height={100}
+                  hideInfo
+                />
+                
+                <ClickableCard
+                  title="FullStack"
+                  query="full-stack"
+                  pathname="/work-experience"
+                  picture="/tech/nodejs2.svg"
+                  width={100}
+                  height={100}
+                  hideInfo
+                />
 
+                <ClickableCard
+                  title="Mobile"
+                  query="mobile"
+                  pathname="/work-experience"
+                  picture="/tech/python.svg"
+                  width={100}
+                  height={100}
+                  hideInfo
+                />
+
+                <ClickableCard
+                  title="DevOps"
+                  query="dev-ops"
+                  pathname="/work-experience"
+                  picture="/tech/typescript.svg"
+                  width={100}
+                  height={100}
+                  hideInfo
+                />
+                
+                <ClickableCard
+                  title="FullStack"
+                  query="full-stack"
+                  pathname="/work-experience"
+                  picture="/tech/angular.svg"
+                  width={100}
+                  height={100}
+                  hideInfo
+                />
+
+                <ClickableCard
+                  title="Mobile"
+                  query="mobile"
+                  pathname="/work-experience"
+                  picture="/tech/kotlin.svg"
+                  width={100}
+                  height={100}
+                  hideInfo
+                />
+
+            </Box>
+            <Box display={'flex'} justifyContent={'space-around'}>
               <ClickableCard
-                title="Mobile"
-                query="mobile"
-                pathname="/work-experience"
-                picture="/mobile.png"
-              />
+                  title="DevOps"
+                  query="dev-ops"
+                  pathname="/work-experience"
+                  picture="/tech/git.svg"
+                  width={100}
+                  height={100}
+                  hideInfo
+                />
+                
+                <ClickableCard
+                  title="FullStack"
+                  query="full-stack"
+                  pathname="/work-experience"
+                  picture="/tech/tailwind.svg"
+                  width={100}
+                  height={100}
+                  hideInfo
+                />
 
-          </Box>
+                <ClickableCard
+                  title="Mobile"
+                  query="mobile"
+                  pathname="/work-experience"
+                  picture="/tech/linux.svg"
+                  width={100}
+                  height={100}
+                  hideInfo
+                />
+
+                <ClickableCard
+                  title="DevOps"
+                  query="dev-ops"
+                  pathname="/work-experience"
+                  picture="/tech/amazon.svg"
+                  width={100}
+                  height={100}
+                  hideInfo
+                />
+                
+                <ClickableCard
+                  title="FullStack"
+                  query="full-stack"
+                  pathname="/work-experience"
+                  picture="/tech/materialui.svg"
+                  width={100}
+                  height={100}
+                  hideInfo
+                />
+
+                <ClickableCard
+                  title="Mobile"
+                  query="mobile"
+                  pathname="/work-experience"
+                  picture="/tech/github.svg"
+                  width={100}
+                  height={100}
+                  hideInfo
+                />
+
+            </Box>
         </Box>
+      </Box>
 
         <Box margin={'10vh 0px 0px 0px'}>
           {/* Include quote here */}
