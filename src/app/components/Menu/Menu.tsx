@@ -1,13 +1,12 @@
 import React from 'react';
 import Image from 'next/image'
 import styles from './Menu.module.css'
-import Link from 'next/link'
-import { MenuProps } from '@/app/interfaces/interfaces';
+import Link from 'next/link';
 import { Box } from '@mui/system';
 import ToggleThemeButton from '../ToggleTheme/ToggleThemeButton';
 import { useThemeContext } from '@/app/styles/ThemeContext';
 
-const Menu = (props: MenuProps) => {
+const Menu = () => {
 
     const { theme } = useThemeContext();
     const logoClass = theme.palette.mode === 'dark' ? styles.darkLogo : styles.lightLogo;
@@ -17,16 +16,9 @@ const Menu = (props: MenuProps) => {
         { name: "Work Experience", link: "/work-experience" },
     ];
 
-    const getActiveLinkClass = (link: string) => {
-        if (link === props.activeLink)
-            return styles.activeLink;
-        else
-            return '';
-    }
-
     return (
-        <Box display={'flex'} width={'66%'} justifyContent={'space-between'} marginBottom={'7vh'}>
-            <Box>
+        <div id='container' className={styles.containerMenu}>
+            <div id='navBrand' className={styles.navbarBrand}>
                 <Link href='/'>
                     {/* Change to SVG */}
                     <Image
@@ -38,16 +30,16 @@ const Menu = (props: MenuProps) => {
                         priority
                     />
                 </Link>
-            </Box>
-            <Box display={'flex'} gap={'3vw'} >
+            </div>
+            <div id='navMenu' className={styles.navbarMenu} >
                 {links.map((element) => (
-                    <div key={element.name} className={getActiveLinkClass(element.link)}>
+                    <div key={element.name} className={styles.navbarLink}>
                         <Link href={element.link}><p>{element.name}</p></Link>
                     </div>
                 ))}
                 <ToggleThemeButton />
-            </Box>
-        </Box>
+            </div>
+        </div>
     );
 };
 export default Menu

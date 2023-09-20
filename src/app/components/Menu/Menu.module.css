@@ -1,7 +1,3 @@
-.menu {
-    margin-bottom: 5%;
-}
-
 .darkLogo {
     /* To change */
     fill: aqua;
@@ -12,7 +8,30 @@
     fill: red;
 }
 
-.activeLink {
+.containerMenu {
+    display: flex;
+    justify-content: space-between;
+    min-height: 3.25rem;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.navbarBrand {
+    display: flex;
+    align-items: center;
+}
+
+.navbarMenu {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbarLink {
     /* To change */
-    color: red;
+    color: rgb(12, 85, 85);
+}
+
+.navbarLink:hover {
+    /* To change */
+    color: #dd2727;
 }
