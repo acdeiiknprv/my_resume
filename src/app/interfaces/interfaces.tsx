@@ -43,10 +43,6 @@ export interface FilterSearchProps {
     onFilterValueChange: (filter: Filter) => void;
 };
 
-export interface MenuProps {
-    activeLink: string;
-}
-
 export interface WorkExperienceProps {
     toActivate: Filter
 };
