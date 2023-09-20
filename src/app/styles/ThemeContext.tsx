@@ -15,7 +15,7 @@ const defaultThemeState = {
 const ThemeContext = createContext(defaultThemeState);
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState(darkTheme);
+  const [theme, setTheme] = useState(lightTheme);
 
   const toggleTheme = () => {
     setTheme(prevTheme => prevTheme.palette.mode === 'light' ? darkTheme : lightTheme);
