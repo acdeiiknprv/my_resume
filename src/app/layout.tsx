@@ -1,3 +1,7 @@
+import Footer from "./components/Footer/Footer";
+import Menu from "./components/Menu/Menu";
+import styles from './page.module.css'
+
 type RootLayoutProps = {
   children: React.ReactNode;
 }
@@ -5,8 +9,13 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
-      {/* Potentially add a header, footer, or other shared UI components here */}
+      <nav className={styles.navbar}>
+        <Menu />
+      </nav>
       {children}
+      <footer className={styles.footer}>
+        <Footer />
+      </footer>
     </>
   );
 }
