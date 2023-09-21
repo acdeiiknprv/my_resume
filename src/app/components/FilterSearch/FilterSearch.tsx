@@ -129,7 +129,7 @@ const FilterSearch: React.FC<FilterSearchProps> = ({
 
     return (
         <Box margin="2vh 0px">
-            <Button onClick={() => toggleMenu('tech')}>
+            <Button onClick={() => toggleMenu('tech')} className={styles.primaryButton}>
                 Tech
                 {filters?.keywords.filter(keyword => keyword.active).length > 0 &&
                     <span className={styles.counter}>
@@ -146,7 +146,7 @@ const FilterSearch: React.FC<FilterSearchProps> = ({
                     )}
                 </List>
             </Collapse>
-            <Button onClick={() => toggleMenu('country')}>
+            <Button onClick={() => toggleMenu('country')} className={styles.primaryButton}>
                 Country
                 {filters?.country.filter(country => country.active).length > 0 &&
                     <span className={styles.counter}>
@@ -163,7 +163,7 @@ const FilterSearch: React.FC<FilterSearchProps> = ({
                     )}
                 </List>
             </Collapse>
-            <Button onClick={() => toggleMenu('jobTitle')}>
+            <Button onClick={() => toggleMenu('jobTitle')} className={styles.primaryButton}>
                 Job Title
                 {filters?.jobTitle.filter(jobTitle => jobTitle.active).length > 0 &&
                     <span className={styles.counter}>
