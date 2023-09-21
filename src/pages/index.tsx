@@ -1,12 +1,9 @@
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import styles from '@/app/page.module.css'
-import ClickableCard from '@/app/components/ClickableCard/ClickableCard';
 import { Box, Button, Link, Typography } from '@mui/material';
 import JobCard from '@/app/components/JobCard/JobCard';
 import StyleButton from '@/app/components/StyleButton/StyleButton';
 import stylesButton from '@/app/components/StyleButton/StyleButton.module.css';
-import CompaniesList from '@/app/components/Company/CompaniesList';
 
 export default function Home() {
   return (
