@@ -90,11 +90,7 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
         return (
             <Box width='100%'>
                 {this.state.loading ? (
-                    <Box display="flex">
-                        <Box flexBasis="25%" flexGrow={0} flexShrink={0}>
-                            <span>Filters</span>
-                        </Box>
-                        <Box display="flex" flexBasis="75%" flexGrow={0} flexShrink={0} justifyContent="center">
+                        <Box display="flex" flexGrow={0} flexShrink={0} justifyContent="center">
                             <Image
                                 src="/logo.svg"
                                 alt="React Logo Loader"
@@ -104,7 +100,6 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
                                 priority
                             />
                         </Box>
-                    </Box>
                 ) : (
                     <Box display="flex">
                         <Box flexBasis="25%" flexGrow={0} flexShrink={0}>

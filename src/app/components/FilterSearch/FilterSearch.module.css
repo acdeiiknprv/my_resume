@@ -1,6 +1,6 @@
 .activeBtn{
-    background-color: #3366ff;
-    color: #000;
+    background-color: #0727f3;
+    color: antiquewhite;
 }
 
 .activeBtn :hover{
@@ -12,8 +12,8 @@
 }
 
 .counter {
-    background-color: #f8d7da;
-    color: #721c24;
+    background-color: #0727f3;
+    color: antiquewhite;
     border-radius: 50%;
     padding: 0.2em 0.5em;
     margin-left: 0.5em;

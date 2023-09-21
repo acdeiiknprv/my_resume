@@ -128,10 +128,7 @@ const FilterSearch: React.FC<FilterSearchProps> = ({
     }
 
     return (
-        <Box>
-            <span className="text-lg font-bold">Filters</span>
-            <br />
-            <br />
+        <Box margin="2vh 0px">
             <Button onClick={() => toggleMenu('tech')}>
                 Tech
                 {filters?.keywords.filter(keyword => keyword.active).length > 0 &&

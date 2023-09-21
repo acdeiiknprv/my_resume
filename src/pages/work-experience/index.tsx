@@ -42,7 +42,7 @@ export default function WorkExp() {
 
     return (
         <main className={styles.workExperience}>
-            <section id='work-experience'>
+            <section id='work-experience' className={styles.fullWidth}>
                 <WorkExperience toActivate={filtersToActivate} />
             </section>
         </main>
