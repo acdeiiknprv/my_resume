@@ -4,7 +4,7 @@
 
 .footer{
   background-color: #0727f3;
-  padding: 4rem 1.5rem 4rem;
+  padding: 0rem 1.5rem 4rem;
   color: antiquewhite;
 }
 
@@ -84,6 +84,8 @@
   flex-direction: column;
   align-items: center;
   margin-top: 4rem;
+  padding: 0rem 4.5rem;
+  text-align: center;
 }
 
 .companyContainer {
@@ -135,4 +137,14 @@
 
 .fullWidth {
   width: 100%;
+}
+
+.backgroundHalf1 {
+  /* background-color: #d1d6f7; */
+  border-radius: 6px;
+}
+
+.backgroundHalf2 {
+  /* background-color: rgb(197, 191, 184); */
+  border-radius: 6px;
 }
