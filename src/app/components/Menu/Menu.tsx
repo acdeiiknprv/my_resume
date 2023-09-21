@@ -12,7 +12,7 @@ const Menu = () => {
     const logoClass = theme.palette.mode === 'dark' ? styles.darkLogo : styles.lightLogo;
 
     let links = [
-        { name: "About", link: "#" },
+        // { name: "About", link: "#" },
         { name: "Work Experience", link: "/work-experience" },
     ];
 
@@ -37,7 +37,7 @@ const Menu = () => {
                         <Link href={element.link}><p>{element.name}</p></Link>
                     </div>
                 ))}
-                <ToggleThemeButton />
+                {/* <ToggleThemeButton /> */}
             </div>
         </div>
     );
