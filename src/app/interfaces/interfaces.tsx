@@ -11,6 +11,15 @@ export interface ClickableCardProps {
     hideInfo?: boolean;
 };
 
+export interface JobCardProps {
+    icon: React.ReactNode;
+    title: string;
+    description: string;
+    toolTitle: string;
+    toolList: Array<string>;
+    learning?: Array<string>;
+    also?: Array<string>;
+};
 export interface DisplayJobsProps {
     filteredJobs: Array<JobsData>
 }
@@ -54,3 +63,8 @@ export interface WorkExperienceState {
 };
 
 export type MenuType = "tech" | "country" | "jobTitle";
+
+export interface ButtonProps {
+    cta: string;
+    href: string;
+}
