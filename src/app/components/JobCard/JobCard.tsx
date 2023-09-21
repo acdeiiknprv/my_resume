@@ -27,14 +27,44 @@ const JobCard: React.FC<JobCardProps> = (props) => {
                 </Typography>
             </Box>
             <Box>
-            {props.toolList.map((tool, index) => {
-                return (
-                    <Box marginTop="0.25em" key={index}>
-                        {tool}
-                    </Box>
-                );
-            })}
+                {props.toolList.map((tool) => {
+                    return (
+                        <Box marginTop="0.25em" key={tool}>
+                            {tool}
+                        </Box>
+                    );
+                })}
             </Box>
+            {props.learning && (
+                <Box>
+                    <br/>
+                    <Box marginTop="0.25em" color="#0727f3">
+                            Also learning:
+                    </Box>
+                    {props.learning.map((tool) => {
+                        return (
+                            <Box marginTop="0.25em" key={tool}>
+                                {tool}
+                            </Box>
+                        );
+                    })}
+                </Box>
+            )}
+            {props.also && (
+                <Box>
+                    <br/>
+                    <Box marginTop="0.25em" color="#0727f3">
+                            And also:
+                    </Box>
+                    {props.also.map((tool) => {
+                        return (
+                            <Box marginTop="0.25em" key={tool}>
+                                {tool}
+                            </Box>
+                        );
+                    })}
+                </Box>
+            )}
         </Box>
     );
 };
