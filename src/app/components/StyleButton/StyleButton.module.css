@@ -1,0 +1,24 @@
+.styleButton {
+    padding: 1.25em 2em;
+    font-weight: 400;
+    border-width: 2px !important;
+    margin-top: 2rem;
+    border-radius: 9999px;
+    -webkit-transition: all .2s ease-in-out;
+    height: 2.5em;
+    line-height: 1.5;
+    text-decoration: none;
+    font-size: 1.25rem;
+    text-transform: none;
+}
+
+.styleButtonColorLight {
+    color: #0727f3;
+    border-color: #0727f3;
+    background-color: transparent;
+}
+.styleButtonColorLight:hover {
+    color: #fff;
+    background-color: #0727f3;
+    border-color: #0727f3;
+}
