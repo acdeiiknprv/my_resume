@@ -1,6 +1,3 @@
-'use client'
-import Footer from '@/app/components/Footer/Footer';
-import Menu from '@/app/components/Menu/Menu';
 import styles from '@/app/page.module.css'
 import WorkExperience from '@/app/components/WorkExperience/WorkExperience';
 import { useSearchParams } from 'next/navigation'
@@ -44,10 +41,10 @@ export default function WorkExp() {
     }
 
     return (
-        <main className={styles.main}>
-            <Menu activeLink="/work-experience" />
-            <WorkExperience toActivate={filtersToActivate} />
-            <Footer />
+        <main className={styles.workExperience}>
+            <section id='work-experience'>
+                <WorkExperience toActivate={filtersToActivate} />
+            </section>
         </main>
     )
 };
