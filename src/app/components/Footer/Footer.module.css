@@ -1,0 +1,21 @@
+.footerButton {
+    background-color: transparent;
+    color: #ffffff;
+    border-radius: 50px;
+    margin: 0 0.2rem;
+    height: 47px;
+    width: 47px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    font-size: 1.18rem;
+}
+
+.footerButton:hover {
+    background: antiquewhite;
+    color: #0727f3;
+    border: 2px solid antiquewhite;
+}
+
+.smallIcon {
+    height: 1.4em;
+    width: 1.4em;
+}
