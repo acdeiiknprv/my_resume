@@ -28,10 +28,10 @@
 
 .navbarLink {
     /* To change */
-    color: rgb(12, 85, 85);
+    color: #131313;
 }
 
 .navbarLink:hover {
     /* To change */
-    color: #dd2727;
+    color: #0727f3;
 }

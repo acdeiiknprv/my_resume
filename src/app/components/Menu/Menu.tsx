@@ -22,11 +22,10 @@ const Menu = () => {
                 <Link href='/'>
                     {/* Change to SVG */}
                     <Image
-                        src="/vercel.svg"
-                        alt="Vercel Logo"
-                        className={logoClass}
-                        width={100}
-                        height={24}
+                        src="/kp.png"
+                        alt="Kevin Picard logo"
+                        width={250}
+                        height={57}
                         priority
                     />
                 </Link>
