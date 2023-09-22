@@ -116,7 +116,7 @@
 
 .quoteContainer {
   padding: 3.5rem 1.25rem;
-  margin-top: -9rem;
+  margin-top: -9rem !important;
   background-color: #141c3a;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px #141c3a;
   border-radius: 12px;
