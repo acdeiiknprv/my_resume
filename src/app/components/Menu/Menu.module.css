@@ -1,3 +1,37 @@
-.menu {
-    margin-bottom: 5%;
+.darkLogo {
+    /* To change */
+    fill: aqua;
+}
+
+.lightLogo {
+    /* To change */
+    fill: red;
+}
+
+.containerMenu {
+    display: flex;
+    justify-content: space-between;
+    min-height: 3.25rem;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.navbarBrand {
+    display: flex;
+    align-items: center;
+}
+
+.navbarMenu {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbarLink {
+    /* To change */
+    color: #131313;
+}
+
+.navbarLink:hover {
+    /* To change */
+    color: #0727f3;
 }

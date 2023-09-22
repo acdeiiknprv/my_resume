@@ -3,10 +3,10 @@ import { getJobsData } from '@/app/services/fetchJobData';
 import React from 'react';
 import DisplayJobs from '../DisplayJobs/DisplayJobs';
 import FilterSearch from '../FilterSearch/FilterSearch';
-import logo from '@/app/ressources/logo.svg';
 import Image from 'next/image'
 import styles from './WorkExperience.module.css'
 import { FilterField, WorkExperienceProps, WorkExperienceState, JobsData, Filter} from '@/app/interfaces/interfaces';
+import { Box } from '@mui/material';
 
 
 class WorkExperience extends React.Component<WorkExperienceProps, WorkExperienceState> {
@@ -88,10 +88,9 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
 
     render() {
         return (
-            <div>
+            <Box width='100%'>
                 {this.state.loading ? (
-                    <div className={styles.container}>
-                        <div className={styles.loader}>
+                        <Box display="flex" flexGrow={0} flexShrink={0} justifyContent="center">
                             <Image
                                 src="/logo.svg"
                                 alt="React Logo Loader"
@@ -100,19 +99,18 @@ class WorkExperience extends React.Component<WorkExperienceProps, WorkExperience
                                 height={24}
                                 priority
                             />
-                        </div>
-                    </div>
+                        </Box>
                 ) : (
-                    <div className="flex flex-row justify-between">
-                        <div className="basis-1/4">
+                    <Box display="flex">
+                        <Box flexBasis="25%" flexGrow={0} flexShrink={0}>
                             <FilterSearch activatedFilters={this.props.toActivate} jobData={this.state.jobData} onFilterValueChange={this.handleFilterValueChange} />
-                        </div>
-                        <div className="basis-3/4">
+                        </Box>
+                        <Box flexBasis="75%" flexGrow={0} flexShrink={0}>
                             <DisplayJobs filteredJobs={this.filterData()} />
-                        </div>
-                    </div>
+                        </Box>
+                    </Box>
                 )}
-            </div>
+            </Box>
         );
     }
 } export default WorkExperience;
