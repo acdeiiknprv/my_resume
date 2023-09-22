@@ -73,7 +73,7 @@ export default function Home() {
                   Would you like to know more about my experiences?
                 </Typography>
                 <Typography variant='h6'>
-                  I’m passionate about exploring various technologies and constantly broadening my skill set. Curious to see my journey and the diverse projects I’ve been a part of?
+                  I&apos;m passionate about exploring various technologies and constantly broadening my skill set. Curious to see my journey and the diverse projects I&apos;ve been a part of?
                   </Typography>
                 <Typography variant='h6'>
                   Dive into my work experience to learn more!
@@ -146,7 +146,7 @@ export default function Home() {
         <section id="quote" className={styles.quote}>
           <Box className={styles.quoteContainer} width="75%" display={"flex"} justifyContent={"center"} margin="0 auto">
             <Typography variant={'h6'} fontWeight={'700'} textAlign={'center'}>
-              "Weaving innovation and functionality, I turn visions into seamless, memorable digital artistry. Embrace the code, change the world."
+            &ldquo; Weaving innovation and functionality, I turn visions into seamless, memorable digital artistry. Embrace the code, change the world. &rdquo;
             </Typography>
           </Box>
         </section>

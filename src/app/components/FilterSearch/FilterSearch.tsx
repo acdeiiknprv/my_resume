@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from './FilterSearch.module.css'
 import { FilterField, JobsData, Filter, FilterSearchProps } from '@/app/interfaces/interfaces';
-import { Box, Button, Collapse, List, ListItem, Typography } from "@mui/material";
+import { Box, Button, Collapse, List } from "@mui/material";
 import { MenuType } from "@/app/interfaces/interfaces";
 
 const FilterSearch: React.FC<FilterSearchProps> = ({

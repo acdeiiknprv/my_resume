@@ -21,8 +21,8 @@
 }
 
 .primaryButton {
-    border: 1px solid #0727f3;
-    color: #0727f3;
-    border-radius: 50px;
-    margin-top: 0.5rem;
+    border: 1px solid #0727f3 !important;
+    color: #0727f3 !important;
+    border-radius: 50px !important;
+    margin-top: 0.5rem !important;
 }
