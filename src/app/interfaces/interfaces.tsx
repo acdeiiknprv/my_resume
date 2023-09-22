@@ -4,10 +4,22 @@ export interface ClickableCardProps {
     pathname: string;
     query: string;
     title: string;
-    description: string;
+    description?: string;
     picture: string;
+    width?: number;
+    height?: number;
+    hideInfo?: boolean;
 };
 
+export interface JobCardProps {
+    icon: React.ReactNode;
+    title: string;
+    description: string;
+    toolTitle: string;
+    toolList: Array<string>;
+    learning?: Array<string>;
+    also?: Array<string>;
+};
 export interface DisplayJobsProps {
     filteredJobs: Array<JobsData>
 }
@@ -40,10 +52,6 @@ export interface FilterSearchProps {
     onFilterValueChange: (filter: Filter) => void;
 };
 
-export interface MenuProps {
-    activeLink: string;
-}
-
 export interface WorkExperienceProps {
     toActivate: Filter
 };
@@ -54,3 +62,9 @@ export interface WorkExperienceState {
     loading: boolean
 };
 
+export type MenuType = "tech" | "country" | "jobTitle";
+
+export interface ButtonProps {
+    cta: string;
+    href: string;
+}

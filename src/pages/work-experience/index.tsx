@@ -1,6 +1,3 @@
-'use client'
-import Footer from '@/app/components/Footer/Footer';
-import Menu from '@/app/components/Menu/Menu';
 import styles from '@/app/page.module.css'
 import WorkExperience from '@/app/components/WorkExperience/WorkExperience';
 import { useSearchParams } from 'next/navigation'
@@ -19,7 +16,7 @@ interface filter {
 export default function WorkExp() {
 
     const searchParams = useSearchParams()
-    const filter = searchParams.get('filter')
+    const filter = searchParams?.get('filter')
 
     let filtersToActivate: filter = {
         keywords: [],
@@ -30,7 +27,7 @@ export default function WorkExp() {
     if (filter) {
         switch (filter) {
             case 'full-stack':
-                filtersToActivate.jobTitle.push({ name: "FullStack Developer", active: true });
+                filtersToActivate.jobTitle.push({ name: "FullStack Engineer", active: true });
                 break;
             case 'dev-ops':
                 filtersToActivate.jobTitle.push({ name: "DevOps Engineer", active: true });
@@ -44,14 +41,10 @@ export default function WorkExp() {
     }
 
     return (
-        <main className={styles.main}>
-            <Menu activeLink="/work-experience" />
-            <div className="mb-32">
-                <div className={styles.description}>
-                    <WorkExperience toActivate={filtersToActivate} />
-                </div>
-            </div>
-            <Footer />
+        <main className={styles.workExperience}>
+            <section id='work-experience' className={styles.fullWidth}>
+                <WorkExperience toActivate={filtersToActivate} />
+            </section>
         </main>
     )
 };

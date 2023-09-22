@@ -4,12 +4,13 @@ import styles from './ClickableCard.module.css'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
 import { ClickableCardProps } from '@/app/interfaces/interfaces';
+import { Box, Typography } from '@mui/material';
 
 const inter = Inter({ subsets: ['latin'] })
 
 const ClickableCard: React.FC<ClickableCardProps> = (props) => {
     return (
-        <div className='flex flex-row justify-between w-9/12 text-center' >
+        <Box>
             <Link href={{
                 pathname: props.pathname,
                 query: {
@@ -19,20 +20,26 @@ const ClickableCard: React.FC<ClickableCardProps> = (props) => {
             >
                 <Image
                     src={props.picture}
-                    alt="Technology Picture"
-                    className=""
-                    width={225}
-                    height={155}
+                    alt={props.title.toLowerCase() + " picture"}
+                    width={props.width ?? 225}
+                    height={props.height ?? 155}
                     priority
                 />
-                <h2 className={inter.className}>
-                    {props.title} <span>-&gt;</span>
-                </h2>
-                <p className={inter.className}>
-                    {props.description}
-                </p>
+                {!props.hideInfo ? (
+                    <Box marginTop={'1vh'}>
+                        <Typography variant={'h5'} fontWeight={'700'} textAlign={'center'}>
+                            {props.title}
+                        </Typography>
+                        <p className={inter.className}>
+                            {props.description ?? ""}
+                        </p>
+                    </Box>
+                )
+            :
+                null
+            }
             </Link>
-        </div>
+        </Box>
     );
 };
 

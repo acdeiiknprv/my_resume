@@ -1,45 +1,44 @@
 import React from 'react';
 import Image from 'next/image'
-import styles from '../../page.module.css'
-import Link from 'next/link'
-import menuStyle from './Menu.module.css'
-import { MenuProps } from '@/app/interfaces/interfaces';
+import styles from './Menu.module.css'
+import Link from 'next/link';
+import { Box } from '@mui/system';
+import ToggleThemeButton from '../ToggleTheme/ToggleThemeButton';
+import { useThemeContext } from '@/app/styles/ThemeContext';
 
-const Menu = (props: MenuProps) => {
+const Menu = () => {
+
+    const { theme } = useThemeContext();
+    const logoClass = theme.palette.mode === 'dark' ? styles.darkLogo : styles.lightLogo;
 
     let links = [
-        { name: "Passions", link: "#" },
+        // { name: "About", link: "#" },
         { name: "Work Experience", link: "/work-experience" },
-        { name: "About", link: "#" }
     ];
 
     return (
-        <div className='flex flex-row justify-between w-9/12 mb-16'>
-            <div id='left' className='basis-1/4'>
-                {/*TODO: Make div size of image*/}
+        <div id='container' className={styles.containerMenu}>
+            <div id='navBrand' className={styles.navbarBrand}>
                 <Link href='/'>
+                    {/* Change to SVG */}
                     <Image
-                        src="/vercel.svg"
-                        alt="Vercel Logo"
-                        className={styles.vercelLogo}
-                        width={100}
-                        height={24}
+                        src="/kp.png"
+                        alt="Kevin Picard logo"
+                        width={250}
+                        height={57}
                         priority
                     />
                 </Link>
             </div>
-
-            <div id='right' className='basis-1/3'>
-                <div id='menu' className='flex flex-row justify-between'>
-                    {links.map((element) => (
-                        <div key={element.name} className={element.link === props.activeLink ? 'activeLink' : ''}>
-                            <Link href={element.link}><p>{element.name}</p></Link>
-                        </div>
-                    ))}
-                </div>
+            <div id='navMenu' className={styles.navbarMenu} >
+                {links.map((element) => (
+                    <div key={element.name} className={styles.navbarLink}>
+                        <Link href={element.link}><p>{element.name}</p></Link>
+                    </div>
+                ))}
+                {/* <ToggleThemeButton /> */}
             </div>
         </div>
     );
 };
-
-export default Menu;
+export default Menu
